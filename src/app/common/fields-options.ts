@@ -1,8 +1,8 @@
 export interface FieldsOptions {
-  [field: string]:{
+  [field: string]: {
     id: string,
     label: string,
-    validationMessage ?: {
+    validationMessage?: {
       [error: string]: any
     }
   }

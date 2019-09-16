@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ListErrorComponent } from './list-error.component';
+import {ListErrorComponent} from './list-error.component';
 
 describe('ListErrorComponent', () => {
   let component: ListErrorComponent;
@@ -8,9 +8,9 @@ describe('ListErrorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListErrorComponent ]
+      declarations: [ListErrorComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

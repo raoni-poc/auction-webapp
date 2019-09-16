@@ -1,5 +1,5 @@
 import {Directive, ElementRef, Input, OnInit} from '@angular/core';
-import {NgControl} from "@angular/forms";
+import {NgControl} from '@angular/forms';
 
 @Directive({
   selector: '[isInvalid]'
@@ -43,5 +43,5 @@ function toogleClassInvalid(control: NgControl, nativeElement: HTMLElement) {
     } else {
       nativeElement.classList.remove('is-invalid');
     }
-  })
+  });
 }

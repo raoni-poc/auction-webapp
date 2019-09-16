@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { FieldErrorComponent } from './field-error.component';
+import {FieldErrorComponent} from './field-error.component';
 
 describe('FieldErrorComponent', () => {
   let component: FieldErrorComponent;
@@ -8,9 +8,9 @@ describe('FieldErrorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FieldErrorComponent ]
+      declarations: [FieldErrorComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

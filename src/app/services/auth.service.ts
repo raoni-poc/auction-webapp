@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {Observable} from "rxjs";
-import {HttpClient} from "@angular/common/http";
-import {tap} from "rxjs/operators";
-import {User} from "../models";
-import {JwtHelperService} from "@auth0/angular-jwt";
-import {environment} from "../../environments/environment";
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {tap} from 'rxjs/operators';
+import {JwtHelperService} from '@auth0/angular-jwt';
+import {environment} from '../../environments/environment';
+import {User} from '../interfaces/user.interface';
 
 const TOKEN_KEY = 'code_shopping_token';
 
@@ -31,7 +31,7 @@ export class AuthService {
 
   setToken(token: string) {
     this.setUserFromToken(token);
-    token ? window.localStorage.setItem(TOKEN_KEY, token) : window.localStorage.removeItem(TOKEN_KEY)
+    token ? window.localStorage.setItem(TOKEN_KEY, token) : window.localStorage.removeItem(TOKEN_KEY);
   }
 
   private setUserFromToken(token: string) {
@@ -56,12 +56,12 @@ export class AuthService {
     return this.http.post<{ token: string }>(`${environment.api.url}/logout`, {})
       .pipe(
         tap(() => {
-          this.setToken(null)
+          this.setToken(null);
         })
       );
   }
 
-  get authorizationHeader(){
+  get authorizationHeader() {
     return `Bearer ${this.getToken()}`;
   }
 }

@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SortColumnComponent } from './sort-column.component';
+import {SortColumnComponent} from './sort-column.component';
 
 describe('SortColumnComponent', () => {
   let component: SortColumnComponent;
@@ -8,9 +8,9 @@ describe('SortColumnComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SortColumnComponent ]
+      declarations: [SortColumnComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

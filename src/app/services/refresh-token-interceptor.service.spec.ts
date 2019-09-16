@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { RefreshTokenInterceptorService } from './refresh-token-interceptor.service';
+import {RefreshTokenInterceptorService} from './refresh-token-interceptor.service';
 
 describe('RefreshTokenInterceptorService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

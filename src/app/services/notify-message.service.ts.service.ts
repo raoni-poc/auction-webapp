@@ -28,7 +28,7 @@ export class NotifyMessageService {
   }
 }
 
-enum Types{
-  success = "success",
-  error = "error"
+enum Types {
+  success = 'success',
+  error = 'error'
 }

@@ -11,17 +11,19 @@ export class AlertErrorComponent implements OnInit {
   showChange: EventEmitter<boolean> = new EventEmitter<boolean>();
   _show = false;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
   @Input()
-  set show(value){
+  set show(value) {
     this._show = value;
     this.showChange.emit(value);
   }
-  hide(){
+
+  hide() {
     this.show = false;
   }
 

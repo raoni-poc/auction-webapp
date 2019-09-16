@@ -7,13 +7,15 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ListErrorComponent implements OnInit {
   @Input() errors = {};
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
-  get errorsKeys(){
-    return Object.keys(this.errors)
+  get errorsKeys() {
+    return Object.keys(this.errors);
   }
 
 }

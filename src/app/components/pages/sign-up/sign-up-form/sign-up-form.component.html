@@ -1,0 +1,21 @@
+<div class="container">
+  <div *ngIf="canShowCompanyForm()">
+    <h3>Dados da Sua Empresa</h3>
+    <app-company-form></app-company-form>
+    <div class="text-right">
+      <button class="btn btn-success" (click)="goToUserForm()">Proseguir</button>
+    </div>
+  </div>
+  <div *ngIf="canShowUserForm()">
+    <h3>Seus Dados</h3>
+    <app-user-form></app-user-form>
+    <div class="row">
+      <div class="text-left col-md-6">
+        <button class="btn btn-danger" (click)="goToCompanyForm()">Voltar</button>
+      </div>
+      <div class="text-right col-md-6">
+        <button class="btn btn-primary">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>

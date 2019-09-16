@@ -1,6 +1,12 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { NotifyMessage.Service.TsService } from './notify-message.service.ts.service';
+import {NotifyMessage
+
+.
+Service.TsService;
+}
+from;
+'./notify-message.service.ts.service';
 
 describe('NotifyMessage.Service.TsService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

@@ -1,4 +1,4 @@
-import { IsInvalidDirective } from './is-invalid.directive';
+import {IsInvalidDirective} from './is-invalid.directive';
 
 describe('IsValidDirective', () => {
   it('should create an instance', () => {

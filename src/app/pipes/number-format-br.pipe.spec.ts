@@ -1,4 +1,4 @@
-import { NumberFormatBrPipe } from './number-format-br.pipe';
+import {NumberFormatBrPipe} from './number-format-br.pipe';
 
 describe('NumberFormatBrPipe', () => {
   it('create an instance', () => {

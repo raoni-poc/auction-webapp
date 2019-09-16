@@ -22,7 +22,7 @@ export class ModalComponent implements OnInit {
     jqueryElement.on('hidden.bs.modal', (e) => {
       console.log(e);
       this.onHide.emit(e);
-    })
+    });
   }
 
   show() {
