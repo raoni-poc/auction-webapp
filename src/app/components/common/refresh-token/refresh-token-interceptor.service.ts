@@ -9,8 +9,8 @@ import {
 } from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {tap} from 'rxjs/operators';
-import {AuthService} from './auth.service';
 import {Router} from '@angular/router';
+import {AuthService} from '../auth/auth.service.js';
 
 @Injectable({
   providedIn: 'root'

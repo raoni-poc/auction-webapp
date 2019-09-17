@@ -3,7 +3,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {SearchParamsBuilder} from '../../common/search-params-builder/search-params-builder.class.js';
 import {SearchParams} from '../../../interfaces/search-params.interface';
-import {User} from '../../../interfaces/user.interface';
+import {User} from '../user.interface.js';
 import {map} from 'rxjs/operators';
 import {environment} from '../../../../environments/environment';
 

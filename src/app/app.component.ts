@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import pace from 'pace';
-import {AuthService} from './services/auth.service';
+import {AuthService} from './components/common/auth/auth.service.js';
 
 @Component({
   selector: 'app-root',

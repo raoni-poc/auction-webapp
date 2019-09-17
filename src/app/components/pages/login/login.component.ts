@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {error} from 'util';
-import {AuthService} from '../../../services/auth.service';
+import {AuthService} from '../../common/auth/auth.service.js';
 
 @Component({
   selector: 'app-login',

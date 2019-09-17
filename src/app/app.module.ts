@@ -10,14 +10,21 @@ import {RouterModule, Routes} from '@angular/router';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {NumberFormatBrPipe} from './pipes/number-format-br.pipe';
 import {JWT_OPTIONS, JwtModule} from '@auth0/angular-jwt';
-import {AuthService} from './services/auth.service';
-import {RefreshTokenInterceptorService} from './services/refresh-token-interceptor.service';
 import {IsInvalidControlDirective, IsInvalidDirective} from './directives/is-invalid.directive';
 import {SignUpComponent} from './components/pages/sign-up/sign-up.component';
 import {Select2Module} from 'ng2-select2';
 import {SignUpFormComponent} from './components/pages/sign-up/sign-up-form/sign-up-form.component';
 import {UserFormComponent} from './components/user/user-form/user-form.component';
 import {CompanyFormComponent} from './components/company/company-form/company-form.component';
+import {AuthService} from './components/common/auth/auth.service.js';
+import {AlertErrorComponent} from './components/common/bootstrap/alert-error/alert-error.component.js';
+import {ModalComponent} from './components/common/bootstrap/modal/modal.component.js';
+import {NavbarComponent} from './components/common/bootstrap/navbar/navbar.component.js';
+import {SortColumnComponent} from './components/common/sort-column/sort-column.component.js';
+import {FieldErrorComponent} from './components/common/bootstrap/field-error/field-error.component.js';
+import {ListErrorComponent} from './components/common/bootstrap/list-error/list-error.component.js';
+import {CardErrorComponent} from './components/common/bootstrap/card-error/card-error.component.js';
+import {RefreshTokenInterceptorService} from './components/common/refresh-token/refresh-token-interceptor.service.js';
 
 function jwtFactory(authService: AuthService) {
   return {
