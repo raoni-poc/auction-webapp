@@ -1,6 +1,12 @@
 <div class="container">
   <div *ngIf="canShowCompanyForm()">
     <h3>Dados da Sua Empresa</h3>
+
+    <app-card-error *ngIf="showErrors()">
+      <list-error
+        [errors]="errors"> </list-error>
+    </app-card-error>
+
     <app-company-form></app-company-form>
     <div class="text-right">
       <button class="btn btn-success" (click)="goToUserForm()">Proseguir</button>
@@ -8,13 +14,22 @@
   </div>
   <div *ngIf="canShowUserForm()">
     <h3>Seus Dados</h3>
-    <app-user-form></app-user-form>
+
+    <ul>
+      <li>Nome: Valido: {{ userForm.get('name').valid }}; Sujo: {{ userForm.get('name').dirty }};Tocado: {{ userForm.get('name').touched}}</li>
+      <li>Email: Valido: {{ userForm.get('email').valid }}; Sujo: {{ userForm.get('email').dirty }};Tocado: {{ userForm.get('email').touched}}</li>
+      <li>Senha: Valido: {{ userForm.get('password').valid }}; Sujo: {{ userForm.get('password').dirty }};Tocado: {{ userForm.get('password').touched}}</li>
+      <li>Confirmação: Valido: {{ userForm.get('repassword').valid }}; Sujo: {{ userForm.get('repassword').dirty }};Tocado: {{ userForm.get('repassword').touched}}</li>
+      <li>ShowErrors: {{ showErrors() }}</li>
+    </ul>
+
+    <app-user-form [form]="userForm"></app-user-form>
     <div class="row">
       <div class="text-left col-md-6">
         <button class="btn btn-danger" (click)="goToCompanyForm()">Voltar</button>
       </div>
       <div class="text-right col-md-6">
-        <button class="btn btn-primary" (click)="onSubmit()">Salvar</button>
+        <button class="btn btn-primary" (click)="onSubmit()" [disabled]="userForm.invalid">Salvar</button>
       </div>
     </div>
   </div>

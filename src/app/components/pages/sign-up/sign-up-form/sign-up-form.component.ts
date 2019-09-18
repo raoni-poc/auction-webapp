@@ -1,30 +1,50 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {HttpErrorResponse} from '@angular/common/http';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UserHttpService} from '../../../user/service/user-http.service';
 import {CompanyHttpService} from '../../../company/service/company-http.service';
+import {MustMatch} from '../../../../validators/must-match.validator.js';
+import userFieldOptions from '../../../user/user-form/user-fields-options.js';
 
 @Component({
   selector: 'app-sign-up-form',
   templateUrl: './sign-up-form.component.html',
   styleUrls: ['./sign-up-form.component.css']
 })
-export class SignUpFormComponent implements OnInit {
+export class SignUpFormComponent {
 
-  step = 1;
-
+  step = 2;
+  userForm: FormGroup;
+  errors = {};
   @Output() onSuccess: EventEmitter<any> = new EventEmitter<any>();
   @Output() onError: EventEmitter<HttpErrorResponse> = new EventEmitter<HttpErrorResponse>();
-  form: FormGroup;
 
   constructor(public userHttp: UserHttpService,
               private companyHttp: CompanyHttpService,
               private formBuilder: FormBuilder) {
-    this.form = this.formBuilder.group({
-    });
-  }
-
-  ngOnInit() {
+    this.userForm = this.formBuilder.group({
+      name: [null, [
+        Validators.required,
+        Validators.maxLength(userFieldOptions.name.validationMessage.maxlength),
+        Validators.minLength(userFieldOptions.name.validationMessage.minlength)
+      ]
+      ],
+      email: [null, [
+        Validators.required,
+        Validators.maxLength(userFieldOptions.email.validationMessage.maxlength),
+        Validators.minLength(userFieldOptions.email.validationMessage.minlength)
+      ]
+      ],
+      password: [null, [
+        Validators.required,
+        Validators.minLength(userFieldOptions.password.validationMessage.minlength)
+      ]
+      ],
+      repassword: [null, [
+        Validators.required
+      ]
+      ],
+    }, {validator: MustMatch('password', 'repassword')});
   }
 
   goToCompanyForm() {
@@ -44,6 +64,25 @@ export class SignUpFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log();
+    this.userHttp
+      .create(this.userForm.value)
+      .subscribe((input) => {
+        this.userForm.reset({
+          name: null,
+          email: null,
+          password: null,
+          repassword: null
+        });
+        this.onSuccess.emit(input);
+      }, responseError => {
+        // if (responseError.status === 422) {
+        this.errors = responseError.error.errors;
+        // }
+        this.onError.emit(responseError);
+      });
+  }
+
+  showErrors() {
+    return Object.keys(this.errors).length != 0;
   }
 }

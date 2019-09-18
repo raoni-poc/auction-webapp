@@ -3,14 +3,11 @@ import {FormControl} from '@angular/forms';
 import {ValidationMessage} from '../../validation-message/validation-message';
 
 @Component({
-  selector: 'field-error',
+  selector: 'app-field-error',
   templateUrl: './field-error.component.html',
   styleUrls: ['./field-error.component.css'],
-  host: {
-    'class': `invalid-feedback`
-  }
 })
-export class FieldErrorComponent implements OnInit {
+export class FieldErrorComponent {
 
   @Input()
   field: FormControl;
@@ -18,12 +15,6 @@ export class FieldErrorComponent implements OnInit {
   label: string;
   @Input()
   messages;
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
 
   get errorKey() {
     return Object.keys(this.errors);
@@ -38,7 +29,9 @@ export class FieldErrorComponent implements OnInit {
   }
 
   getMessage(error) {
-    let replaceTokens = [this.label];
+    console.log(error);
+    console.log(this.messages);
+    const replaceTokens = [this.label];
     if (this.messages && this.messages.hasOwnProperty(error)) {
       if (Array.isArray(this.messages[error])) {
         replaceTokens.concat(this.messages[error]);

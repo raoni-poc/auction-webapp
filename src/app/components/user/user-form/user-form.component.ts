@@ -1,31 +1,25 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {UserHttpService} from '../service/user-http.service';
+import {ChangeDetectorRef, Component, Input, OnChanges} from '@angular/core';
+import {FormGroup} from '@angular/forms';
+import userFieldOptions from './user-fields-options';
 
 @Component({
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.css']
 })
-export class UserFormComponent {
+export class UserFormComponent implements OnChanges {
 
-  form: FormGroup;
+  @Input() form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder,
-              private service: UserHttpService) {
-    this.form = this.formBuilder.group({
-      id: [null],
-      name: ['', [Validators.required, Validators.min(3)]],
-      email: ['', [Validators.required, Validators.min(5)]],
-    });
+  constructor(private changeRef: ChangeDetectorRef) {
   }
 
-  submit() {
-    this.service.create(this.form.value).subscribe((response) => {
+  ngOnChanges(): void {
+    this.changeRef.detectChanges();
+  }
 
-    }, responseError => {
-
-    });
+  get fieldOptions(): any {
+    return userFieldOptions;
   }
 
 }
