@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {SearchParamsBuilder} from '../../common/search-params-builder/search-params-builder.class.js';
+import {SearchParamsBuilder} from '../../common/search-params-builder/search-params-builder.class';
 import {SearchParams} from '../../../interfaces/search-params.interface';
-import {User} from '../user.interface.js';
+import {User} from '../user.interface';
 import {map} from 'rxjs/operators';
 import {environment} from '../../../../environments/environment';
 

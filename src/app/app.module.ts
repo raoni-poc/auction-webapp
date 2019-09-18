@@ -16,15 +16,15 @@ import {Select2Module} from 'ng2-select2';
 import {SignUpFormComponent} from './components/pages/sign-up/sign-up-form/sign-up-form.component';
 import {UserFormComponent} from './components/user/user-form/user-form.component';
 import {CompanyFormComponent} from './components/company/company-form/company-form.component';
-import {AuthService} from './components/common/auth/auth.service.js';
-import {AlertErrorComponent} from './components/common/bootstrap/alert-error/alert-error.component.js';
-import {ModalComponent} from './components/common/bootstrap/modal/modal.component.js';
-import {NavbarComponent} from './components/common/bootstrap/navbar/navbar.component.js';
-import {SortColumnComponent} from './components/common/sort-column/sort-column.component.js';
-import {FieldErrorComponent} from './components/common/bootstrap/field-error/field-error.component.js';
-import {ListErrorComponent} from './components/common/bootstrap/list-error/list-error.component.js';
-import {CardErrorComponent} from './components/common/bootstrap/card-error/card-error.component.js';
-import {RefreshTokenInterceptorService} from './components/common/refresh-token/refresh-token-interceptor.service.js';
+import {AuthService} from './components/common/auth/auth.service';
+import {AlertErrorComponent} from './components/common/bootstrap/alert-error/alert-error.component';
+import {ModalComponent} from './components/common/bootstrap/modal/modal.component';
+import {NavbarComponent} from './components/common/bootstrap/navbar/navbar.component';
+import {SortColumnComponent} from './components/common/sort-column/sort-column.component';
+import {FieldErrorComponent} from './components/common/bootstrap/field-error/field-error.component';
+import {ListErrorComponent} from './components/common/bootstrap/list-error/list-error.component';
+import {CardErrorComponent} from './components/common/bootstrap/card-error/card-error.component';
+import {RefreshTokenInterceptorService} from './components/common/refresh-token/refresh-token-interceptor.service';
 
 function jwtFactory(authService: AuthService) {
   return {

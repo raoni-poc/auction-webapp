@@ -1,4 +1,4 @@
-import {SearchParams} from '../../../interfaces/search-params.interface.js';
+import {SearchParams} from '../../../interfaces/search-params.interface';
 
 export class SearchParamsBuilder {
   constructor(private searchParams: SearchParams) {

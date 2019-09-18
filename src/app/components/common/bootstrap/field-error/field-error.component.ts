@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
-import {ValidationMessage} from '../../validation-message/validation-message.js';
+import {ValidationMessage} from '../../validation-message/validation-message';
 
 @Component({
   selector: 'field-error',

@@ -1,6 +1,6 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {SortColumnComponent} from './sort-column.component.js';
+import {SortColumnComponent} from './sort-column.component';
 
 describe('SortColumnComponent', () => {
   let component: SortColumnComponent;

@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {Company} from '../company.interface.js';
-import {SearchParamsBuilder} from '../../common/search-params-builder/search-params-builder.class.js';
+import {Company} from '../company.interface';
+import {SearchParamsBuilder} from '../../common/search-params-builder/search-params-builder.class';
 import {Observable} from 'rxjs';
-import {SearchParams} from '../../../interfaces/search-params.interface.js';
-import {HttpClient, HttpParams} from '@angular/common/http.js';
-import {environment} from '../../../../environments/environment.js';
+import {SearchParams} from '../../../interfaces/search-params.interface';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {environment} from '../../../../environments/environment';
 import {map} from 'rxjs/operators';
 
 @Injectable({

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CompanyHttpService } from './company-http.service.js';
+import { CompanyHttpService } from './company-http.service';
 
 describe('CompanyHttpService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
