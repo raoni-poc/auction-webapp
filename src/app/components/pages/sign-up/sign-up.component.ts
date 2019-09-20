@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, OnChanges, OnInit} from '@angular/core';
+import {Component, OnChanges} from '@angular/core';
 
 @Component({
   selector: 'app-sign-up',
@@ -6,15 +6,6 @@ import {ChangeDetectorRef, Component, OnChanges, OnInit} from '@angular/core';
   styleUrls: ['./sign-up.component.css']
 })
 
-export class SignUpComponent implements OnChanges {
-  constructor(private changeRef: ChangeDetectorRef) {
-  }
+export class SignUpComponent {
 
-  ngOnChanges(): void {
-    this.changeRef.detectChanges();
-  }
-
-  get fieldOptions(): any {
-    return this.fieldOptions;
-  }
 }

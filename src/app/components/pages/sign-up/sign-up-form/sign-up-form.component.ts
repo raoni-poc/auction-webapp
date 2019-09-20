@@ -1,10 +1,9 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {HttpErrorResponse} from '@angular/common/http';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UserHttpService} from '../../../user/service/user-http.service';
-import {CompanyHttpService} from '../../../company/service/company-http.service';
-import {MustMatch} from '../../../../validators/must-match.validator.js';
-import userFieldOptions from '../../../user/user-form/user-fields-options.js';
+import {MustMatch} from '../../../../validators/must-match.validator';
+import userFieldOptions from '../../../user/user-form/user-fields-options';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-sign-up-form',
@@ -13,54 +12,36 @@ import userFieldOptions from '../../../user/user-form/user-fields-options.js';
 })
 export class SignUpFormComponent {
 
-  step = 2;
   userForm: FormGroup;
   errors = {};
-  @Output() onSuccess: EventEmitter<any> = new EventEmitter<any>();
-  @Output() onError: EventEmitter<HttpErrorResponse> = new EventEmitter<HttpErrorResponse>();
 
-  constructor(public userHttp: UserHttpService,
-              private companyHttp: CompanyHttpService,
-              private formBuilder: FormBuilder) {
+  constructor(private userHttp: UserHttpService,
+              private formBuilder: FormBuilder,
+              private router: Router) {
     this.userForm = this.formBuilder.group({
-      name: [null, [
+      name: ['Raoni ' + (new Date().getTime()), [
         Validators.required,
         Validators.maxLength(userFieldOptions.name.validationMessage.maxlength),
         Validators.minLength(userFieldOptions.name.validationMessage.minlength)
       ]
       ],
-      email: [null, [
+      email: ['raonibs' + (new Date().getTime()) + '@gmail.com', [
         Validators.required,
         Validators.maxLength(userFieldOptions.email.validationMessage.maxlength),
-        Validators.minLength(userFieldOptions.email.validationMessage.minlength)
+        Validators.minLength(userFieldOptions.email.validationMessage.minlength),
+        Validators.email,
       ]
       ],
-      password: [null, [
+      password: ['12345678', [
         Validators.required,
         Validators.minLength(userFieldOptions.password.validationMessage.minlength)
       ]
       ],
-      repassword: [null, [
+      repassword: ['12345678', [
         Validators.required
       ]
       ],
     }, {validator: MustMatch('password', 'repassword')});
-  }
-
-  goToCompanyForm() {
-    this.step = 1;
-  }
-
-  goToUserForm() {
-    this.step = 2;
-  }
-
-  canShowCompanyForm() {
-    return this.step === 1;
-  }
-
-  canShowUserForm() {
-    return this.step === 2;
   }
 
   onSubmit() {
@@ -73,16 +54,13 @@ export class SignUpFormComponent {
           password: null,
           repassword: null
         });
-        this.onSuccess.emit(input);
+        this.router.navigate(['/sing-up/success']);
       }, responseError => {
-        // if (responseError.status === 422) {
         this.errors = responseError.error.errors;
-        // }
-        this.onError.emit(responseError);
       });
   }
 
   showErrors() {
-    return Object.keys(this.errors).length != 0;
+    return Object.keys(this.errors).length !== 0;
   }
 }

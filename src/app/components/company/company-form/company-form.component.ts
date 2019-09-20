@@ -1,18 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectorRef, Component, Input, OnChanges, OnInit} from '@angular/core';
 import {FormGroup} from '@angular/forms';
+import companyFieldOptions from '../company-fields-options';
 
 @Component({
   selector: 'app-company-form',
   templateUrl: './company-form.component.html',
   styleUrls: ['./company-form.component.css']
 })
-export class CompanyFormComponent implements OnInit {
+export class CompanyFormComponent implements OnChanges {
 
-  // form: FormGroup;
+  @Input() form: FormGroup;
 
-  constructor() { }
+  constructor(private changeRef: ChangeDetectorRef) {
+  }
 
-  ngOnInit() {
+  ngOnChanges(): void {
+    this.changeRef.detectChanges();
+  }
+
+  get fieldOptions(): any {
+    return companyFieldOptions;
   }
 
 }

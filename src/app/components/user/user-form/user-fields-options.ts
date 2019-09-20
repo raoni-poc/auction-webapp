@@ -1,4 +1,4 @@
-import {FieldsOptions} from '../../common/fields-options/fields-options.js';
+import {FieldsOptions} from '../../common/fields-options/fields-options';
 
 const userFieldOptions: FieldsOptions = {
   name: {
@@ -29,17 +29,6 @@ const userFieldOptions: FieldsOptions = {
     id: 'repassoword',
     label: 'Confime a Senha',
   }
-  // product_id: {
-  //   id: 'product_id',
-  //   label: 'Produto',
-  // },
-  // amount: {
-  //   id: 'amount',
-  //   label: 'Quantidade',
-  //   validationMessage: {
-  //     min: 1
-  //   }
-  // }
 };
 
 export default userFieldOptions;

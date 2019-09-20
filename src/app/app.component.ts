@@ -20,6 +20,6 @@ export class AppComponent implements OnInit {
   }
 
   canShowNavbar() {
-    return this.authService.isAuth();
+    return true;  /** @TODO  return this.authService.isAuth(); */
   }
 }

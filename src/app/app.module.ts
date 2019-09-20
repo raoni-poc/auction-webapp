@@ -25,6 +25,13 @@ import {FieldErrorComponent} from './components/common/bootstrap/field-error/fie
 import {ListErrorComponent} from './components/common/bootstrap/list-error/list-error.component';
 import {CardErrorComponent} from './components/common/bootstrap/card-error/card-error.component';
 import {RefreshTokenInterceptorService} from './components/common/refresh-token/refresh-token-interceptor.service';
+import {SignUpSuccessComponent} from './pages/sign-up-success/sign-up-success.component';
+import {CardSuccessComponent} from './components/common/bootstrap/card-success/card-success.component';
+import {EmailVerifyComponent} from './email-verify/email-verify.component';
+import {CompanyListComponent} from './components/company/company-list/company-list.component';
+import {CompanyInsertComponent} from './components/company/company-insert/company-insert.component';
+import {CompanyDeleteComponent} from './components/company/company-delete/company-delete.component';
+import {CompanyEditComponent} from './components/company/company-edit/company-edit.component';
 
 function jwtFactory(authService: AuthService) {
   return {
@@ -54,7 +61,14 @@ function jwtFactory(authService: AuthService) {
     CardErrorComponent,
     SignUpFormComponent,
     UserFormComponent,
-    CompanyFormComponent
+    CompanyFormComponent,
+    SignUpSuccessComponent,
+    CardSuccessComponent,
+    EmailVerifyComponent,
+    CompanyListComponent,
+    CompanyInsertComponent,
+    CompanyDeleteComponent,
+    CompanyEditComponent
   ],
   imports: [
     BrowserModule,

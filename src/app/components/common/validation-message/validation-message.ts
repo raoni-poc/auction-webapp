@@ -1,8 +1,8 @@
 export const messages = {
-  required: ':name é requerido.',
+  required: ':name é obrigatório.',
   minlength: ':name precisa ter no mínimo :min caracteres',
-  maxlength: ':name precisa ter no máximo :max caracteres',
-  email: ':name não um e-mail válido.',
+  maxlength: ':name pode ter no máximo :max caracteres',
+  email: ':name não é válido.',
   min: ':name deve começar de :min',
   mustMatch: ':name não é igual.'
 };

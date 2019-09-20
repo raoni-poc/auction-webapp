@@ -1,17 +1,17 @@
 import {Injectable} from '@angular/core';
-import {Company} from '../company.interface';
-import {SearchParamsBuilder} from '../../common/search-params-builder/search-params-builder.class';
 import {Observable} from 'rxjs';
-import {SearchParams} from '../../../interfaces/search-params.interface';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import {environment} from '../../../../environments/environment';
 import {map} from 'rxjs/operators';
+import {environment} from '../../../environments/environment';
+import {SearchParams} from '../../interfaces/search-params.interface';
+import {SearchParamsBuilder} from '../common/search-params-builder/search-params-builder.class';
+import {Company} from './company.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CompanyHttpService {
-  private baseUrl = `${environment.api.url}/categories`;
+  private baseUrl = `${environment.api.url}/company`;
 
   constructor(private http: HttpClient) {
   }
