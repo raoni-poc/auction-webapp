@@ -1,0 +1,9 @@
+<div class="container">
+  <app-card-error *ngIf="showErrors()">
+    <list-error [errors]="errors"></list-error>
+  </app-card-error>
+  <h3>Seus Dados</h3>
+  <app-company-form [form]="form"></app-company-form>
+  <button class="btn btn-primary" (click)="onSubmit()" [disabled]="form.invalid">Salvar</button>
+</div>
+
