@@ -4,52 +4,36 @@ import {CompanyHttpService} from '../company-http.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {NotifyMessageService} from '../../common/notify-message/notify-message.service.ts.service';
+import {DestroyComponent} from '../../common/abstract/destroy/destroy.component';
 
 @Component({
   selector: 'app-company-delete',
   templateUrl: './company-delete.component.html',
   styleUrls: ['./company-delete.component.css']
 })
-export class CompanyDeleteComponent implements OnInit {
-  form: FormGroup;
-  id: number;
+export class CompanyDeleteComponent extends DestroyComponent {
+  slug = '/company';
+  destroyMessage = 'Empresa removida com sucesso.';
 
-  constructor(private service: CompanyHttpService,
-              private route: ActivatedRoute,
-              private formBuilder: FormBuilder,
-              private location: Location,
-              private notifyMessage: NotifyMessageService,
-              private router: Router) {
-    this.form = this.formBuilder.group({
+  constructor(protected service: CompanyHttpService,
+              protected route: ActivatedRoute,
+              protected formBuilder: FormBuilder,
+              protected location: Location,
+              protected notifyMessage: NotifyMessageService,
+              protected router: Router) {
+    super(service, route, formBuilder, location, notifyMessage, router);
+
+  }
+
+  hydrateForm(response) {
+    this.form.get('name').setValue(response.name);
+    this.form.get('trade_name').setValue(response.trade_name);
+  }
+
+  makeForm(): FormGroup {
+    return this.formBuilder.group({
       name: [''],
       trade_name: ['']
     });
-    this.form.disable();
-  }
-
-  ngOnInit(): void {
-    this.id = parseInt(this.route.snapshot.paramMap.get('id'), 10);
-    this.refresh();
-  }
-
-  refresh() {
-    console.log(this.id);
-    this.service.show(this.id).subscribe(
-      response => {
-        this.form.get('name').setValue(response.name);
-        this.form.get('trade_name').setValue(response.trade_name);
-      }, error => console.log(error)
-    );
-  }
-
-  goBack() {
-    this.location.back(); // <-- go back to previous location on cancel
-  }
-
-  remove(){
-    this.service.destroy(this.id).subscribe(response => {
-      this.notifyMessage.success('Empresa removida com sucesso.');
-      this.router.navigate(['/company']);
-    }, error => console.log(error));
   }
 }

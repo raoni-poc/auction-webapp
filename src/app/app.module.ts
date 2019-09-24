@@ -18,6 +18,7 @@ import {FieldErrorComponent} from './modules/common/bootstrap/field-error/field-
 import {CompanyShowComponent} from './modules/company/company-show/company-show.component';
 import {CompanyEditComponent} from './modules/company/company-edit/company-edit.component';
 import {CompanyDeleteComponent} from './modules/company/company-delete/company-delete.component';
+import {DestroyComponent} from './modules/common/abstract/destroy/destroy.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +27,6 @@ import {CompanyDeleteComponent} from './modules/company/company-delete/company-d
     ListErrorComponent,
     FieldErrorComponent,
     NavbarComponent,
-    CollectionComponent,
-    InsertComponent,
     CompanyTableComponent,
     CompanyFormComponent,
     CompanyInsertComponent,

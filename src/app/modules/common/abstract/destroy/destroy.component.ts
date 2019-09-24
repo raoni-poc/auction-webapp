@@ -1,38 +1,49 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpService} from '../service/http.service';
-import {HttpErrorResponse} from '@angular/common/http';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Location} from '@angular/common';
+import {NotifyMessageService} from '../../notify-message/notify-message.service.ts.service';
 
-@Component({
-  selector: 'app-destroy',
-  templateUrl: './destroy.component.html',
-  styleUrls: ['./destroy.component.css']
-})
-export class DestroyComponent {
+export abstract class DestroyComponent implements OnInit {
+  form: FormGroup;
+  id: number;
+  abstract slug: string;
+  abstract destroyMessage: string;
 
-  private _id: number;
-  private model;
-
-  @Output() onSuccess: EventEmitter<any> = new EventEmitter<any>();
-  @Output() onError: EventEmitter<HttpErrorResponse> = new EventEmitter<HttpErrorResponse>();
-
-  constructor(private service: HttpService) {
+  protected constructor(protected service: HttpService,
+                        protected route: ActivatedRoute,
+                        protected formBuilder: FormBuilder,
+                        protected location: Location,
+                        protected notifyMessage: NotifyMessageService,
+                        protected router: Router) {
+    this.form = this.makeForm();
   }
 
-  @Input()
-  set id(value) {
-    this._id = value;
-    if (this._id) {
-      this.service
-        .show(this._id)
-        .subscribe(model => this.model = model);
-    }
+  ngOnInit(): void {
+    this.form.disable();
+    this.id = parseInt(this.route.snapshot.paramMap.get('id'), 10);
+    this.refresh();
   }
 
-  destroy() {
-    this.service
-      .destroy(this._id)
-      .subscribe((category) => {
-        this.onSuccess.emit(category);
-      }, error => this.onError.emit(error));
+  refresh() {
+    this.service.show(this.id).subscribe(
+      response => this.hydrateForm(response), error => console.log(error)
+    );
   }
+
+  goBack() {
+    this.location.back(); // <-- go back to previous location on cancel
+  }
+
+  remove() {
+    this.service.destroy(this.id).subscribe(response => {
+      this.notifyMessage.success(this.destroyMessage);
+      this.router.navigate([this.slug]);
+    }, error => console.log(error));
+  }
+
+  abstract hydrateForm(response);
+
+  abstract makeForm(): FormGroup;
 }

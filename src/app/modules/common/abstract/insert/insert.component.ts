@@ -1,15 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {CompanyHttpService} from '../../../company/company-http.service';
+import {Router} from '@angular/router';
+import {NotifyMessageService} from '../../notify-message/notify-message.service.ts.service';
 
-@Component({
-  selector: 'app-insert',
-  templateUrl: './insert.component.html',
-  styleUrls: ['./insert.component.css']
-})
-export class InsertComponent implements OnInit {
+export abstract class InsertComponent {
 
-  constructor() { }
+  abstract successMessage: string;
+  abstract slug: string;
+  form: FormGroup;
+  errors = {};
 
-  ngOnInit() {
+  protected constructor(protected service: CompanyHttpService,
+                        protected formBuilder: FormBuilder,
+                        protected router: Router,
+                        protected notifyMessage: NotifyMessageService) {
+    this.form = this.makeForm();
   }
 
+  onSubmit() {
+    this.service
+      .insert(this.form.value)
+      .subscribe((input) => {
+        this.form.reset({
+          name: null,
+          trade_name: null,
+        });
+        this.notifyMessage.success(this.successMessage);
+        this.router.navigate(['/' + this.slug + '/' + input.id]);
+      }, responseError => {
+        this.errors = responseError.error.errors;
+      });
+  }
+
+  showErrors() {
+    return Object.keys(this.errors).length !== 0;
+  }
+
+  abstract makeForm(): FormGroup;
 }

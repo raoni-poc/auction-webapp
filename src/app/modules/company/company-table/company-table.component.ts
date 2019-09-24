@@ -8,8 +8,9 @@ import {CollectionComponent} from '../../common/abstract/collection/collection.c
   styleUrls: ['./company-table.component.css']
 })
 export class CompanyTableComponent extends CollectionComponent {
+  sortColumn = {column: 'created_at', sort: 'desc'};
+
   constructor(service: CompanyHttpService) {
     super(service);
-    this.sortColumn = {column: 'created_at', sort: 'desc'};
   }
 }

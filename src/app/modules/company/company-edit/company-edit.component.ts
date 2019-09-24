@@ -4,23 +4,35 @@ import {CompanyHttpService} from '../company-http.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import companyFieldOptions from '../company-fields-options';
 import {NotifyMessageService} from '../../common/notify-message/notify-message.service.ts.service';
+import {EditComponent} from '../../common/abstract/edit/edit.component';
 
 @Component({
   selector: 'app-company-edit',
   templateUrl: './company-edit.component.html',
   styleUrls: ['./company-edit.component.css']
 })
-export class CompanyEditComponent implements OnInit {
+export class CompanyEditComponent extends EditComponent {
   form: FormGroup;
   id: number;
   errors = {};
+  slug = '/company/';
+  createMessage = 'Empresa editada com sucesso.';
 
-  constructor(private service: CompanyHttpService,
-              private route: ActivatedRoute,
-              private formBuilder: FormBuilder,
-              private router: Router,
-              private notifyMessage: NotifyMessageService) {
-    this.form = this.formBuilder.group({
+  constructor(protected service: CompanyHttpService,
+              protected route: ActivatedRoute,
+              protected formBuilder: FormBuilder,
+              protected router: Router,
+              protected notifyMessage: NotifyMessageService) {
+    super(service, route, formBuilder, router, notifyMessage);
+  }
+
+  hydrateForm(response) {
+    this.form.get('name').setValue(response.name);
+    this.form.get('trade_name').setValue(response.trade_name);
+  }
+
+  makeForm(): FormGroup {
+    return this.formBuilder.group({
       name: ['', [
         Validators.required,
         Validators.minLength(companyFieldOptions.name.validationMessage.minlength),
@@ -32,35 +44,5 @@ export class CompanyEditComponent implements OnInit {
         Validators.maxLength(companyFieldOptions.trade_name.validationMessage.maxlength)
       ]]
     });
-  }
-
-  ngOnInit(): void {
-    this.id = parseInt(this.route.snapshot.paramMap.get('id'), 10);
-    this.refresh();
-  }
-
-  refresh() {
-    console.log(this.id);
-    this.service.show(this.id).subscribe(
-      response => {
-        this.form.get('name').setValue(response.name);
-        this.form.get('trade_name').setValue(response.trade_name);
-      }, error => console.log(error)
-    );
-  }
-
-  onSubmit() {
-    this.service
-      .edit(this.id, this.form.value)
-      .subscribe((input) => {
-        this.notifyMessage.success('Empresa editada com sucesso.');
-        this.router.navigate(['/company/' + input.id]);
-      }, responseError => {
-        this.errors = responseError.error.errors;
-      });
-  }
-
-  showErrors() {
-    return Object.keys(this.errors).length !== 0;
   }
 }

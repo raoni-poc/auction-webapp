@@ -1,13 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpService} from '../service/http.service';
 
-@Component({
-  selector: 'app-collection',
-  templateUrl: './collection.component.html',
-  styleUrls: ['./collection.component.css']
-})
-
-export class CollectionComponent implements OnInit {
+export abstract class CollectionComponent implements OnInit {
 
   collection: Array<any> = [];
   pagination = {
@@ -15,11 +9,11 @@ export class CollectionComponent implements OnInit {
     totalItems: 0,
     itemsPerPage: 15,
   };
-  sortColumn: {column: string, sort: string};
+  abstract sortColumn: {column: string, sort: string};
   searchText: string;
   id: number;
 
-  constructor(protected service: HttpService) {
+  protected constructor(protected service: HttpService) {
   }
 
   ngOnInit() {
@@ -43,7 +37,7 @@ export class CollectionComponent implements OnInit {
     this.refresh();
   }
 
-  sort(sortColumn) {
+  sort() {
     this.refresh();
   }
 
