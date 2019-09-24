@@ -6,10 +6,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import {Select2Module} from 'ng2-select2';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {CollectionComponent} from './modules/common/abstract/collection/collection.component';
 import {CompanyTableComponent} from './modules/company/company-table/company-table.component';
 import {NavbarComponent} from './modules/common/bootstrap/navbar/navbar.component';
-import {InsertComponent} from './modules/common/abstract/insert/insert.component';
 import {CompanyInsertComponent} from './modules/company/company-insert/company-insert.component';
 import {CardErrorComponent} from './modules/common/bootstrap/card-error/card-error.component';
 import {ListErrorComponent} from './modules/common/bootstrap/list-error/list-error.component';
@@ -18,7 +16,12 @@ import {FieldErrorComponent} from './modules/common/bootstrap/field-error/field-
 import {CompanyShowComponent} from './modules/company/company-show/company-show.component';
 import {CompanyEditComponent} from './modules/company/company-edit/company-edit.component';
 import {CompanyDeleteComponent} from './modules/company/company-delete/company-delete.component';
-import {DestroyComponent} from './modules/common/abstract/destroy/destroy.component';
+import {AccountStatusDestroyComponent} from './modules/account-status/account-status-destroy/account-status-destroy.component';
+import {AccountStatusEditComponent} from './modules/account-status/account-status-edit/account-status-edit.component';
+import {AccountStatusFormComponent} from './modules/account-status/account-status-form/account-status-form.component';
+import {AccountStatusInsertComponent} from './modules/account-status/account-status-insert/account-status-insert.component';
+import {AccountStatusShowComponent} from './modules/account-status/account-status-show/account-status-show.component';
+import {AccountStatusTableComponent} from './modules/account-status/account-status-table/account-status-table.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,12 @@ import {DestroyComponent} from './modules/common/abstract/destroy/destroy.compon
     CompanyShowComponent,
     CompanyEditComponent,
     CompanyDeleteComponent,
+    AccountStatusDestroyComponent,
+    AccountStatusEditComponent,
+    AccountStatusFormComponent,
+    AccountStatusInsertComponent,
+    AccountStatusShowComponent,
+    AccountStatusTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,9 +50,9 @@ import {DestroyComponent} from './modules/common/abstract/destroy/destroy.compon
     AppRoutingModule,
     NgxPaginationModule,
     ReactiveFormsModule,
-    Select2Module
+    Select2Module,
   ],
-  exports: [AppComponent],
+  exports: [AppComponent, CardErrorComponent],
   entryComponents: [AppComponent],
   providers: [],
   bootstrap: [AppComponent]

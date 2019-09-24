@@ -1,21 +1,21 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
-import {CompanyHttpService} from '../company-http.service';
+import { Component, OnInit } from '@angular/core';
+import {DestroyComponent} from '../../common/abstract/destroy/destroy.component';
 import {ActivatedRoute, Router} from '@angular/router';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {Location} from '@angular/common';
 import {NotifyMessageService} from '../../common/notify-message/notify-message.service.ts.service';
-import {DestroyComponent} from '../../common/abstract/destroy/destroy.component';
+import {AccountStatusHttpService} from '../account-status-http.service';
 
 @Component({
-  selector: 'app-company-delete',
-  templateUrl: './company-delete.component.html',
-  styleUrls: ['./company-delete.component.css']
+  selector: 'app-account-status-destroy',
+  templateUrl: './account-status-destroy.component.html',
+  styleUrls: ['./account-status-destroy.component.css']
 })
-export class CompanyDeleteComponent extends DestroyComponent {
-  slug = 'company';
-  destroyMessage = 'Empresa removida com sucesso.';
+export class AccountStatusDestroyComponent  extends DestroyComponent {
+  slug = 'account-status';
+  destroyMessage = 'Status de conta removida com sucesso.';
 
-  constructor(protected service: CompanyHttpService,
+  constructor(protected service: AccountStatusHttpService,
               protected route: ActivatedRoute,
               protected formBuilder: FormBuilder,
               protected location: Location,
@@ -27,13 +27,11 @@ export class CompanyDeleteComponent extends DestroyComponent {
 
   hydrateForm(response) {
     this.form.get('name').setValue(response.name);
-    this.form.get('trade_name').setValue(response.trade_name);
   }
 
   makeForm(): FormGroup {
     return this.formBuilder.group({
       name: [''],
-      trade_name: ['']
     });
   }
 }

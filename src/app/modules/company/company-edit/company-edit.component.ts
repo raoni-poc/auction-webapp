@@ -15,7 +15,7 @@ export class CompanyEditComponent extends EditComponent {
   form: FormGroup;
   id: number;
   errors = {};
-  slug = '/company/';
+  slug = 'company';
   createMessage = 'Empresa editada com sucesso.';
 
   constructor(protected service: CompanyHttpService,

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {CompanyHttpService} from '../company-http.service';
 import {CollectionComponent} from '../../common/abstract/collection/collection.component';
 

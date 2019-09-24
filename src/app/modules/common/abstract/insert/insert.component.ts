@@ -1,7 +1,7 @@
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {CompanyHttpService} from '../../../company/company-http.service';
 import {Router} from '@angular/router';
 import {NotifyMessageService} from '../../notify-message/notify-message.service.ts.service';
+import {HttpService} from '../service/http.service';
 
 export abstract class InsertComponent {
 
@@ -10,7 +10,7 @@ export abstract class InsertComponent {
   form: FormGroup;
   errors = {};
 
-  protected constructor(protected service: CompanyHttpService,
+  protected constructor(protected service: HttpService,
                         protected formBuilder: FormBuilder,
                         protected router: Router,
                         protected notifyMessage: NotifyMessageService) {

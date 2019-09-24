@@ -39,7 +39,7 @@ export abstract class DestroyComponent implements OnInit {
   remove() {
     this.service.destroy(this.id).subscribe(response => {
       this.notifyMessage.success(this.destroyMessage);
-      this.router.navigate([this.slug]);
+      this.router.navigate(['/' + this.slug]);
     }, error => console.log(error));
   }
 

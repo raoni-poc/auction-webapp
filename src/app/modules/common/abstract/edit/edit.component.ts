@@ -1,9 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {CompanyHttpService} from '../../../company/company-http.service';
+import {OnInit} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NotifyMessageService} from '../../notify-message/notify-message.service.ts.service';
-import companyFieldOptions from '../../../company/company-fields-options';
 import {HttpService} from '../service/http.service';
 
 export abstract class EditComponent implements OnInit {
@@ -40,7 +38,7 @@ export abstract class EditComponent implements OnInit {
       .edit(this.id, this.form.value)
       .subscribe((input) => {
         this.notifyMessage.success(this.createMessage);
-        this.router.navigate([this.slug + input.id]);
+        this.router.navigate(['/' + this.slug + '/' + input.id]);
       }, responseError => {
         this.errors = responseError.error.errors;
       });
