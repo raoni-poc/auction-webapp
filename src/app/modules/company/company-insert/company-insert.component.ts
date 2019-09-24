@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import companyFieldOptions from '../company-fields-options';
 import {CompanyHttpService} from '../company-http.service';
+import {NotifyMessageService} from '../../common/notify-message/notify-message.service.ts.service';
 
 @Component({
   selector: 'app-company-insert',
@@ -16,7 +17,8 @@ export class CompanyInsertComponent {
 
   constructor(private service: CompanyHttpService,
               private formBuilder: FormBuilder,
-              private router: Router) {
+              private router: Router,
+              private notifyMessage: NotifyMessageService) {
     this.form = this.formBuilder.group({
       name: ['Empresa ' + (new Date().getTime()), [
         Validators.required,
@@ -33,14 +35,14 @@ export class CompanyInsertComponent {
 
   onSubmit() {
     this.service
-      .create(this.form.value)
+      .insert(this.form.value)
       .subscribe((input) => {
         this.form.reset({
           name: null,
           trade_name: null,
         });
-        console.log('success'); /* @TODO */
-        //this.router.navigate(['/sing-up/success']);
+        this.notifyMessage.success('Empresa criada com sucesso.');
+        this.router.navigate(['/company/' + input.id]);
       }, responseError => {
         this.errors = responseError.error.errors;
       });

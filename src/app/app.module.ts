@@ -1,43 +1,39 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {NumberFormatBrPipe} from './pipes/number-format-br.pipe';
-import {JWT_OPTIONS, JwtModule} from '@auth0/angular-jwt';
-import {IsInvalidControlDirective, IsInvalidDirective} from './directives/is-invalid.directive';
-import {SignUpSuccessComponent} from './pages/sign-up-success/sign-up-success.component';
-import {EmailVerifyComponent} from './email-verify/email-verify.component';
-import {AuthService} from './modules/common/auth/auth.service';
-import {RefreshTokenInterceptorService} from './modules/common/refresh-token/refresh-token-interceptor.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {Select2Module} from 'ng2-select2';
-import {CompanyModule} from './modules/company/company.module.js';
-import {CommonModule} from './modules/common/common.module.js';
-import {RouteModule} from './modules/route/route.module.js';
-
-
-function jwtFactory(authService: AuthService) {
-  return {
-    whitelistedDomains: [
-      new RegExp('localhost:8000/*')
-    ],
-    tokenGetter: () => {
-      return authService.getToken();
-    }
-  };
-}
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {CollectionComponent} from './modules/common/abstract/collection/collection.component';
+import {CompanyTableComponent} from './modules/company/company-table/company-table.component';
+import {NavbarComponent} from './modules/common/bootstrap/navbar/navbar.component';
+import {InsertComponent} from './modules/common/abstract/insert/insert.component';
+import {CompanyInsertComponent} from './modules/company/company-insert/company-insert.component';
+import {CardErrorComponent} from './modules/common/bootstrap/card-error/card-error.component';
+import {ListErrorComponent} from './modules/common/bootstrap/list-error/list-error.component';
+import {CompanyFormComponent} from './modules/company/company-form/company-form.component';
+import {FieldErrorComponent} from './modules/common/bootstrap/field-error/field-error.component';
+import {CompanyShowComponent} from './modules/company/company-show/company-show.component';
+import {CompanyEditComponent} from './modules/company/company-edit/company-edit.component';
+import {CompanyDeleteComponent} from './modules/company/company-delete/company-delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NumberFormatBrPipe,
-    IsInvalidDirective,
-    IsInvalidControlDirective,
-    SignUpSuccessComponent,
-    EmailVerifyComponent,
+    CardErrorComponent,
+    ListErrorComponent,
+    FieldErrorComponent,
+    NavbarComponent,
+    CollectionComponent,
+    InsertComponent,
+    CompanyTableComponent,
+    CompanyFormComponent,
+    CompanyInsertComponent,
+    CompanyShowComponent,
+    CompanyEditComponent,
+    CompanyDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,45 +42,11 @@ function jwtFactory(authService: AuthService) {
     AppRoutingModule,
     NgxPaginationModule,
     ReactiveFormsModule,
-    RouteModule,
-    Select2Module,
-    CommonModule,
-    CompanyModule,
-    // AccountStatusModule,
-    // AddressModule,
-    // BidModule,
-    // CargoModule,
-    // CityModule,
-    // CompanyModule,
-    // CountryModule,
-    // DocumentModule,
-    // DocumentTypeModule,
-    // LoginModule,
-    // OfferModule,
-    // OfferTypeModule,
-    // PermissionModule,
-    // RequirementModule,
-    // RequirementTypeModule,
-    // RoleModule,
-
-    // SignUpModule,
-    // StateModule,
-    // UserModule,
-    JwtModule.forRoot({
-      jwtOptionsProvider: {
-        provide: JWT_OPTIONS,
-        useFactory: jwtFactory,
-        deps: [AuthService]
-      }
-    }),
+    Select2Module
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: RefreshTokenInterceptorService,
-      multi: true
-    },
-  ],
+  exports: [AppComponent],
+  entryComponents: [AppComponent],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

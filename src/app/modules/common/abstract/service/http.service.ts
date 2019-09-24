@@ -20,7 +20,10 @@ export abstract class HttpService implements CollectionInterface,
   EditInterface,
   InsertInterface,
   ShowInterface {
-  constructor(private http: HttpClient, private slug: string) {
+
+  protected slug = '';
+
+  constructor(protected http: HttpClient) {
   }
 
   collection(searchParams: SearchParams): Observable<{ data: Array<any>, meta: any }> {
@@ -32,7 +35,7 @@ export abstract class HttpService implements CollectionInterface,
 
   destroy(id: number): Observable<any> {
     return this.http.delete
-    (`${this.getUrl()}`);
+    (`${this.getUrl(id)}`);
   }
 
   insert(data: any): Observable<any> {
@@ -55,9 +58,10 @@ export abstract class HttpService implements CollectionInterface,
   }
 
   protected getUrl(id: number = null): string {
+    const url = `${environment.api.url}/${this.slug}`;
     if (id) {
-      return `${environment.api.url}/${this.slug}`;
+      return url + '/' + id;
     }
-    return `${environment.api.url}`;
+    return url;
   }
 }

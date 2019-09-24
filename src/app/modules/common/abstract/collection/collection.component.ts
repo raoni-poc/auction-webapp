@@ -15,11 +15,11 @@ export class CollectionComponent implements OnInit {
     totalItems: 0,
     itemsPerPage: 15,
   };
-  sortColumn = {column: 'created_at', sort: 'desc'};
+  sortColumn: {column: string, sort: string};
   searchText: string;
   id: number;
 
-  constructor(private service: HttpService) {
+  constructor(protected service: HttpService) {
   }
 
   ngOnInit() {
