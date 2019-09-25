@@ -1,25 +1,29 @@
 import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import companyFieldOptions from '../company-fields-options';
 import {CompanyHttpService} from '../company-http.service';
 import {NotifyMessageService} from '../../common/notify-message/notify-message.service.ts.service';
 import {InsertComponent} from '../../common/abstract/insert/insert.component';
+import {HttpService} from '../../common/abstract/service/http.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-company-insert',
   templateUrl: './company-insert.component.html',
   styleUrls: ['./company-insert.component.css']
 })
-export class CompanyInsertComponent extends InsertComponent{
-  successMessage = 'Empresa criada com sucesso.';
+export class CompanyInsertComponent extends InsertComponent {
   slug = 'company';
+  successMessage = 'Empresa criada com sucesso.';
 
-  constructor(protected service: CompanyHttpService,
-              protected formBuilder: FormBuilder,
-              protected router: Router,
-              protected notifyMessage: NotifyMessageService) {
-    super(service, formBuilder, router, notifyMessage);
+  constructor(service: CompanyHttpService,
+              route: ActivatedRoute,
+              formBuilder: FormBuilder,
+              location: Location,
+              router: Router,
+              notifyMessage: NotifyMessageService) {
+    super(service, route, formBuilder, location, router, notifyMessage);
   }
 
   makeForm(): FormGroup {

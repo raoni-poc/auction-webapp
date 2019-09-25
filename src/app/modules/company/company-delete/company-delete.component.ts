@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {NotifyMessageService} from '../../common/notify-message/notify-message.service.ts.service';
 import {DestroyComponent} from '../../common/abstract/destroy/destroy.component';
+import {HttpService} from '../../common/abstract/service/http.service';
 
 @Component({
   selector: 'app-company-delete',
@@ -13,16 +14,16 @@ import {DestroyComponent} from '../../common/abstract/destroy/destroy.component'
 })
 export class CompanyDeleteComponent extends DestroyComponent {
   slug = 'company';
-  destroyMessage = 'Empresa removida com sucesso.';
+  successMessage = 'Empresa removida com sucesso.';
 
-  constructor(protected service: CompanyHttpService,
-              protected route: ActivatedRoute,
-              protected formBuilder: FormBuilder,
-              protected location: Location,
-              protected notifyMessage: NotifyMessageService,
-              protected router: Router) {
-    super(service, route, formBuilder, location, notifyMessage, router);
-
+  constructor(service: CompanyHttpService,
+              route: ActivatedRoute,
+              formBuilder: FormBuilder,
+              location: Location,
+              router: Router,
+              notifyMessage: NotifyMessageService) {
+    super(service, route, formBuilder, location, router, notifyMessage);
+    this.form.disable();
   }
 
   hydrateForm(response) {

@@ -1,40 +1,14 @@
-import {FormBuilder, FormGroup} from '@angular/forms';
-import {Router} from '@angular/router';
-import {NotifyMessageService} from '../../notify-message/notify-message.service.ts.service';
-import {HttpService} from '../service/http.service';
+import {AbstractComponent} from '../abstract.component';
+import {Observable} from 'rxjs';
 
-export abstract class InsertComponent {
-
-  abstract successMessage: string;
-  abstract slug: string;
-  form: FormGroup;
-  errors = {};
-
-  protected constructor(protected service: HttpService,
-                        protected formBuilder: FormBuilder,
-                        protected router: Router,
-                        protected notifyMessage: NotifyMessageService) {
-    this.form = this.makeForm();
+export abstract class InsertComponent extends AbstractComponent {
+  getService(): Observable<any> {
+    return this.service.insert(this.form.value);
   }
 
-  onSubmit() {
-    this.service
-      .insert(this.form.value)
-      .subscribe((input) => {
-        this.form.reset({
-          name: null,
-          trade_name: null,
-        });
-        this.notifyMessage.success(this.successMessage);
-        this.router.navigate(['/' + this.slug + '/' + input.id]);
-      }, responseError => {
-        this.errors = responseError.error.errors;
-      });
+  hydrateForm(response) {
   }
 
-  showErrors() {
-    return Object.keys(this.errors).length !== 0;
+  resetForm() {
   }
-
-  abstract makeForm(): FormGroup;
 }

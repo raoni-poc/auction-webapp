@@ -1,5 +1,5 @@
 import {ChangeDetectorRef, Component, Input, OnChanges, OnInit} from '@angular/core';
-import {FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import companyFieldOptions from '../company-fields-options';
 
 @Component({
@@ -20,6 +20,21 @@ export class CompanyFormComponent implements OnChanges {
 
   get fieldOptions(): any {
     return companyFieldOptions;
+  }
+
+  buildForm(formBuild: FormBuilder) {
+    return formBuild.group({
+      name: ['Empresa ' + (new Date().getTime()), [
+        Validators.required,
+        Validators.minLength(this.fieldOptions.name.validationMessage.minlength),
+        Validators.maxLength(this.fieldOptions.name.validationMessage.maxlength)
+      ]],
+      trade_name: ['Nome Fantasia' + (new Date().getTime()), [
+        Validators.required,
+        Validators.minLength(this.fieldOptions.trade_name.validationMessage.minlength),
+        Validators.maxLength(this.fieldOptions.trade_name.validationMessage.maxlength)
+      ]]
+    });
   }
 
 }

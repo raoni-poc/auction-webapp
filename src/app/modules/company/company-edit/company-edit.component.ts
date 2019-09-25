@@ -1,10 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {CompanyHttpService} from '../company-http.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import companyFieldOptions from '../company-fields-options';
 import {NotifyMessageService} from '../../common/notify-message/notify-message.service.ts.service';
 import {EditComponent} from '../../common/abstract/edit/edit.component';
+import {HttpService} from '../../common/abstract/service/http.service';
+import {Location} from '@angular/common';
+import {CompanyHttpService} from '../company-http.service';
 
 @Component({
   selector: 'app-company-edit',
@@ -12,18 +14,16 @@ import {EditComponent} from '../../common/abstract/edit/edit.component';
   styleUrls: ['./company-edit.component.css']
 })
 export class CompanyEditComponent extends EditComponent {
-  form: FormGroup;
-  id: number;
-  errors = {};
   slug = 'company';
-  createMessage = 'Empresa editada com sucesso.';
+  successMessage = 'Empresa editada com sucesso.';
 
-  constructor(protected service: CompanyHttpService,
-              protected route: ActivatedRoute,
-              protected formBuilder: FormBuilder,
-              protected router: Router,
-              protected notifyMessage: NotifyMessageService) {
-    super(service, route, formBuilder, router, notifyMessage);
+  constructor(service: CompanyHttpService,
+              route: ActivatedRoute,
+              formBuilder: FormBuilder,
+              location: Location,
+              router: Router,
+              notifyMessage: NotifyMessageService) {
+    super(service, route, formBuilder, location, router, notifyMessage);
   }
 
   hydrateForm(response) {
