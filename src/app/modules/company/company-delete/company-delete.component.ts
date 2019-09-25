@@ -1,11 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {CompanyHttpService} from '../company-http.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {NotifyMessageService} from '../../common/notify-message/notify-message.service.ts.service';
 import {DestroyComponent} from '../../common/abstract/destroy/destroy.component';
-import {HttpService} from '../../common/abstract/service/http.service';
+import {CompanyFormComponent} from '../company-form/company-form.component';
+import companyFieldOptions from '../company-fields-options';
 
 @Component({
   selector: 'app-company-delete',
@@ -32,9 +33,6 @@ export class CompanyDeleteComponent extends DestroyComponent {
   }
 
   makeForm(): FormGroup {
-    return this.formBuilder.group({
-      name: [''],
-      trade_name: ['']
-    });
+    return CompanyFormComponent.makeForm(this.formBuilder);
   }
 }

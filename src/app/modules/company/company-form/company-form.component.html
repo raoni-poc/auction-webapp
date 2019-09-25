@@ -4,7 +4,7 @@
     <input type="text"
            class="form-control"
            [id]="fieldOptions.trade_name.id"
-           placeholder="Digite o Nome Fantasia"
+           [placeholder]="fieldOptions.trade_name.placeholder"
            formControlName="trade_name">
     <app-field-error [field]="form.get('trade_name')"
                      [label]="fieldOptions.trade_name.label"
@@ -15,7 +15,7 @@
     <input type="text"
            class="form-control"
            [id]="fieldOptions.name.id"
-           placeholder="Digite a Razão Social"
+           [placeholder]="fieldOptions.name.placeholder"
            formControlName="name">
     <app-field-error [field]="form.get('name')"
                      [label]="fieldOptions.name.label"

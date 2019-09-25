@@ -1,12 +1,12 @@
 import {Component} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import companyFieldOptions from '../company-fields-options';
 import {NotifyMessageService} from '../../common/notify-message/notify-message.service.ts.service';
 import {EditComponent} from '../../common/abstract/edit/edit.component';
-import {HttpService} from '../../common/abstract/service/http.service';
 import {Location} from '@angular/common';
 import {CompanyHttpService} from '../company-http.service';
+import {CompanyFormComponent} from '../company-form/company-form.component';
 
 @Component({
   selector: 'app-company-edit',
@@ -32,17 +32,6 @@ export class CompanyEditComponent extends EditComponent {
   }
 
   makeForm(): FormGroup {
-    return this.formBuilder.group({
-      name: ['', [
-        Validators.required,
-        Validators.minLength(companyFieldOptions.name.validationMessage.minlength),
-        Validators.maxLength(companyFieldOptions.name.validationMessage.maxlength)
-      ]],
-      trade_name: ['', [
-        Validators.required,
-        Validators.minLength(companyFieldOptions.trade_name.validationMessage.minlength),
-        Validators.maxLength(companyFieldOptions.trade_name.validationMessage.maxlength)
-      ]]
-    });
+    return CompanyFormComponent.makeForm(this.formBuilder);
   }
 }

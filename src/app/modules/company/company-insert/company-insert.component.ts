@@ -1,12 +1,12 @@
 import {Component} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import companyFieldOptions from '../company-fields-options';
 import {CompanyHttpService} from '../company-http.service';
 import {NotifyMessageService} from '../../common/notify-message/notify-message.service.ts.service';
 import {InsertComponent} from '../../common/abstract/insert/insert.component';
-import {HttpService} from '../../common/abstract/service/http.service';
 import {Location} from '@angular/common';
+import {CompanyFormComponent} from '../company-form/company-form.component';
 
 @Component({
   selector: 'app-company-insert',
@@ -27,18 +27,7 @@ export class CompanyInsertComponent extends InsertComponent {
   }
 
   makeForm(): FormGroup {
-    return this.formBuilder.group({
-      name: ['Empresa ' + (new Date().getTime()), [
-        Validators.required,
-        Validators.minLength(companyFieldOptions.name.validationMessage.minlength),
-        Validators.maxLength(companyFieldOptions.name.validationMessage.maxlength)
-      ]],
-      trade_name: ['Nome Fantasia' + (new Date().getTime()), [
-        Validators.required,
-        Validators.minLength(companyFieldOptions.trade_name.validationMessage.minlength),
-        Validators.maxLength(companyFieldOptions.trade_name.validationMessage.maxlength)
-      ]]
-    });
+    return CompanyFormComponent.makeForm(this.formBuilder);
   }
 
 }

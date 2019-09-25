@@ -16,6 +16,7 @@ import {CompanyInsertComponent} from './modules/company/company-insert/company-i
 import {CompanyShowComponent} from './modules/company/company-show/company-show.component';
 import {CompanyEditComponent} from './modules/company/company-edit/company-edit.component';
 import {CompanyDeleteComponent} from './modules/company/company-delete/company-delete.component';
+import {SearchComponent} from './modules/common/search/search.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import {CompanyDeleteComponent} from './modules/company/company-delete/company-d
     CompanyShowComponent,
     CompanyEditComponent,
     CompanyDeleteComponent,
+    SearchComponent,
     // AccountStatusDestroyComponent,
     // AccountStatusEditComponent,
     // AccountStatusFormComponent,

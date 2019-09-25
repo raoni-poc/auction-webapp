@@ -1,15 +1,15 @@
 <div class="row">
-  <h1>Listagem de Empresas</h1>
+  <h1>Empresas</h1>
   <table class="table table-striped">
     <thead>
     <tr>
-      <td colspan="2">
-        <a class="btn btn-sm btn-primary" [routerLink]="'/company/new'">
-          Nova Categoria
+      <td colspan="1">
+        <a class="btn btn-sm btn-primary" [routerLink]="'/'+this.slug+'/new'">
+          Criar
         </a>
       </td>
-      <td colspan="3">
-        <!--              <company-search-form (onSearch)="search($event)"></company-search-form>-->
+      <td colspan="2">
+        <app-search (onSearch)="search($event)"></app-search>
       </td>
     </tr>
     <tr>
@@ -20,14 +20,14 @@
     </thead>
     <tbody>
     <tr
-      *ngFor="let company of collection | paginate:{itemsPerPage:5,currentPage: pagination.page, totalItems: pagination.totalItems, itemsPerPage:pagination.itemsPerPage}">
-      <td>{{ company.name }}</td>
-      <td>{{ company.created_at.date | date: 'dd/MM/yyyy'}}</td>
+      *ngFor="let model of collection | paginate:{itemsPerPage:5,currentPage: pagination.page, totalItems: pagination.totalItems, itemsPerPage:pagination.itemsPerPage}">
+      <td>{{ model.name }}</td>
+      <td>{{ model.created_at.date | date: 'dd/MM/yyyy'}}</td>
       <td>
         <div class="btn-group-sm">
-          <a class="btn btn-sm btn-success" [routerLink]="'/company/'+company.id">Ver</a>
-          <a class="btn btn-sm btn-primary" [routerLink]="'/company/edit/'+company.id">Editar</a>
-          <a class="btn btn-sm btn-danger" [routerLink]="'/company/delete/'+company.id">Excluir</a>
+          <a class="btn btn-sm btn-success" [routerLink]="'/'+this.slug+'/'+model.id">Ver</a>
+          <a class="btn btn-sm btn-primary" [routerLink]="'/'+this.slug+'/edit/'+model.id">Editar</a>
+          <a class="btn btn-sm btn-danger" [routerLink]="'/'+this.slug+'/delete/'+model.id">Excluir</a>
         </div>
       </td>
     </tr>
