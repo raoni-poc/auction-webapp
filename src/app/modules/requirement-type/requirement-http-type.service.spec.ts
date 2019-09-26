@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RequirementHttpTypeService } from './requirement-http-type.service';
+import { RequirementTypeHttpService } from './requirement-type-http.service';
 
 describe('RequirementHttpTypeService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: RequirementHttpTypeService = TestBed.get(RequirementHttpTypeService);
+    const service: RequirementTypeHttpService = TestBed.get(RequirementTypeHttpService);
     expect(service).toBeTruthy();
   });
 });

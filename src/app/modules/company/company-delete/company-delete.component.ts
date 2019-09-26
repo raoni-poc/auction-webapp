@@ -6,7 +6,6 @@ import {Location} from '@angular/common';
 import {NotifyMessageService} from '../../common/notify-message/notify-message.service.ts.service';
 import {DestroyComponent} from '../../common/abstract/destroy/destroy.component';
 import {CompanyFormComponent} from '../company-form/company-form.component';
-import companyFieldOptions from '../company-fields-options';
 
 @Component({
   selector: 'app-company-delete',

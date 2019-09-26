@@ -1,10 +1,10 @@
 import {FieldsOptions} from '../common/abstract/fields-options';
 
-const accountStatusFieldOptions: FieldsOptions = {
+const requirementTypeFieldOptions: FieldsOptions = {
   name: {
     id: 'name',
-    label: 'Status',
-    placeholder: 'Digite o status.',
+    label: 'Nome',
+    placeholder: 'Digite o tipo de requisito.',
     validationMessage: {
       minlength: 3,
       maxlength: 255
@@ -12,4 +12,4 @@ const accountStatusFieldOptions: FieldsOptions = {
   },
 };
 
-export default accountStatusFieldOptions;
+export default requirementTypeFieldOptions;

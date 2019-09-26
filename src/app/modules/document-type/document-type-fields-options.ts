@@ -1,6 +1,6 @@
 import {FieldsOptions} from '../common/abstract/fields-options';
 
-const accountStatusFieldOptions: FieldsOptions = {
+const documentTypeFieldOptions: FieldsOptions = {
   name: {
     id: 'name',
     label: 'Status',
@@ -12,4 +12,4 @@ const accountStatusFieldOptions: FieldsOptions = {
   },
 };
 
-export default accountStatusFieldOptions;
+export default documentTypeFieldOptions;
