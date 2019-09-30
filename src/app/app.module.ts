@@ -31,6 +31,11 @@ import {RequirementFormComponent} from './modules/requirement/requirement-form/r
 import {RequirementTypeFormComponent} from './modules/requirement-type/requirement-type-form/requirement-type-form.component';
 import {RoleFormComponent} from './modules/role/role-form/role-form.component';
 import {RouteFormComponent} from './modules/route/route-form/route-form.component';
+import { UserDestroyComponent } from './modules/user/user-destroy/user-destroy.component';
+import { UserEditComponent } from './modules/user/user-edit/user-edit.component';
+import { UserInsertComponent } from './modules/user/user-insert/user-insert.component';
+import { UserShowComponent } from './modules/user/user-show/user-show.component';
+import { UserTableComponent } from './modules/user/user-table/user-table.component';
 
 
 @NgModule({
@@ -119,6 +124,11 @@ import {RouteFormComponent} from './modules/route/route-form/route-form.componen
     // RouteDestroyComponent,
     // RouteEditComponent,
     RouteFormComponent,
+    UserDestroyComponent,
+    UserEditComponent,
+    UserInsertComponent,
+    UserShowComponent,
+    UserTableComponent,
     // RouteInsertComponent,
     // RouteShowComponent,
     // RouteTableComponent,

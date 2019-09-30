@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {CompanyHttpService} from '../company-http.service';
 import {CollectionComponent} from '../../common/abstract/collection/collection.component';
-import {HttpService} from '../../common/abstract/service/http.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder} from '@angular/forms';
 import {Location} from '@angular/common';
@@ -13,7 +12,6 @@ import {NotifyMessageService} from '../../common/notify-message/notify-message.s
   styleUrls: ['./company-table.component.css']
 })
 export class CompanyTableComponent extends CollectionComponent {
-  slug = 'company';
   successMessage = 'Empresa criada com sucesso.';
   sortColumn = {column: 'created_at', sort: 'desc'};
 

@@ -7,8 +7,8 @@ import {Location} from '@angular/common';
 import {Observable} from 'rxjs';
 
 export abstract class AbstractComponent implements OnInit {
-  abstract slug: string;
   abstract successMessage: string;
+  slug: string;
   form: FormGroup;
   id: number;
   errors = {};
@@ -20,6 +20,7 @@ export abstract class AbstractComponent implements OnInit {
                         protected router: Router,
                         protected notifyMessage: NotifyMessageService) {
     this.form = this.makeForm();
+    this.slug = service.slug;
   }
 
   ngOnInit(): void {

@@ -21,7 +21,7 @@ export abstract class HttpService implements CollectionInterface,
   InsertInterface,
   ShowInterface {
 
-  protected slug = '';
+  slug = '';
 
   constructor(protected http: HttpClient) {
   }
