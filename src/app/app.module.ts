@@ -17,6 +17,20 @@ import {CompanyShowComponent} from './modules/company/company-show/company-show.
 import {CompanyEditComponent} from './modules/company/company-edit/company-edit.component';
 import {CompanyDeleteComponent} from './modules/company/company-delete/company-delete.component';
 import {SearchComponent} from './modules/common/search/search.component';
+import {AccountStatusFormComponent} from './modules/account-status/account-status-form/account-status-form.component';
+import {BidFormComponent} from './modules/bid/bid-form/bid-form.component';
+import {CargoFormComponent} from './modules/cargo/cargo-form/cargo-form.component';
+import {CityFormComponent} from './modules/city/city-form/city-form.component';
+import {CountryFormComponent} from './modules/country/country-form/country-form.component';
+import {DocumentFormComponent} from './modules/document/document-form/document-form.component';
+import {DocumentTypeFormComponent} from './modules/document-type/document-type-form/document-type-form.component';
+import {OfferFormComponent} from './modules/offer/offer-form/offer-form.component';
+import {OfferTypeFormComponent} from './modules/offer-type/offer-type-form/offer-type-form.component';
+import {PermissionFormComponent} from './modules/permission/permission-form/permission-form.component';
+import {RequirementFormComponent} from './modules/requirement/requirement-form/requirement-form.component';
+import {RequirementTypeFormComponent} from './modules/requirement-type/requirement-type-form/requirement-type-form.component';
+import {RoleFormComponent} from './modules/role/role-form/role-form.component';
+import {RouteFormComponent} from './modules/route/route-form/route-form.component';
 
 
 @NgModule({
@@ -35,31 +49,33 @@ import {SearchComponent} from './modules/common/search/search.component';
     SearchComponent,
     // AccountStatusDestroyComponent,
     // AccountStatusEditComponent,
-    // AccountStatusFormComponent,
+    AccountStatusFormComponent,
     // AccountStatusInsertComponent,
     // AccountStatusShowComponent,
     // AccountStatusTableComponent,
+    BidFormComponent,
+    CargoFormComponent,
     // CityDestroyComponent,
     // CityEditComponent,
-    // CityFormComponent,
+    CityFormComponent,
     // CityInsertComponent,
     // CityShowComponent,
     // CityTableComponent,
     // CountryDestroyComponent,
     // CountryEditComponent,
-    // CountryFormComponent,
+    CountryFormComponent,
     // CountryInsertComponent,
     // CountryShowComponent,
     // CountryTableComponent,
     // DocumentDestroyComponent,
     // DocumentEditComponent,
-    // DocumentFormComponent,
+    DocumentFormComponent,
     // DocumentInsertComponent,
     // DocumentShowComponent,
     // DocumentTableComponent,
     // DocumentTypeDestroyComponent,
     // DocumentTypeEditComponent,
-    // DocumentTypeFormComponent,
+    DocumentTypeFormComponent,
     // DocumentTypeInsertComponent,
     // DocumentTypeShowComponent,
     // DocumentTypeTableComponent,
@@ -71,37 +87,38 @@ import {SearchComponent} from './modules/common/search/search.component';
     // OfferTypeShowComponent,
     // OfferDestroyComponent,
     // OfferEditComponent,
-    // OfferFormComponent,
+    OfferFormComponent,
     // OfferShowComponent,
     // OfferTableComponent,
     // OfferInsertComponent,
+    OfferTypeFormComponent,
     // PermissionInsertComponent,
     // PermissionShowComponent,
     // PermissionEditComponent,
     // PermissionDestroyComponent,
-    // PermissionFormComponent,
+    PermissionFormComponent,
     // PermissionTableComponent,
     // RequirementDestroyComponent,
     // RequirementEditComponent,
-    // RequirementFormComponent,
+    RequirementFormComponent,
     // RequirementInsertComponent,
     // RequirementShowComponent,
     // RequirementTableComponent,
     // RequirementTypeDestroyComponent,
     // RequirementTypeEditComponent,
-    // RequirementTypeFormComponent,
+    RequirementTypeFormComponent,
     // RequirementTypeInsertComponent,
     // RequirementTypeShowComponent,
     // RequirementTypeTableComponent,
     // RoleDestroyComponent,
     // RoleEditComponent,
-    // RoleFormComponent,
+    RoleFormComponent,
     // RoleInsertComponent,
     // RoleShowComponent,
     // RoleTableComponent,
     // RouteDestroyComponent,
     // RouteEditComponent,
-    // RouteFormComponent,
+    RouteFormComponent,
     // RouteInsertComponent,
     // RouteShowComponent,
     // RouteTableComponent,

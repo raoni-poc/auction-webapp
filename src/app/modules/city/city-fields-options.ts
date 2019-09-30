@@ -1,6 +1,6 @@
 import {FieldsOptions} from '../common/abstract/fields-options';
 
-const accountStatusFieldOptions: FieldsOptions = {
+const cityFieldOptions: FieldsOptions = {
   ibge_code: {
     id: 'ibge_code',
     label: 'Código Ibge',
@@ -22,7 +22,10 @@ const accountStatusFieldOptions: FieldsOptions = {
   state_id: {
     id: 'state_id',
     label: 'Estado',
+    validationMessage: {
+      min: 1,
+    }
   },
 };
 
-export default accountStatusFieldOptions;
+export default cityFieldOptions;

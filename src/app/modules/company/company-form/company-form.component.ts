@@ -9,7 +9,6 @@ import {FormComponent} from '../../common/abstract/form.component';
   styleUrls: ['./company-form.component.css']
 })
 export class CompanyFormComponent extends FormComponent {
-
   static makeForm(formBuild: FormBuilder) {
     const o = companyFieldOptions;
     return formBuild.group({

@@ -1,6 +1,6 @@
 import {FieldsOptions} from '../common/abstract/fields-options';
 
-const accountStatusFieldOptions: FieldsOptions = {
+const cargoFieldsOptions: FieldsOptions = {
   cargo: {
     id: 'cargo',
     label: 'Carga',
@@ -30,4 +30,4 @@ const accountStatusFieldOptions: FieldsOptions = {
   },
 };
 
-export default accountStatusFieldOptions;
+export default cargoFieldsOptions;
