@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {FormComponent} from '../../common/abstract/form.component';
 import addressFieldOptions from '../address-fields-options';
@@ -8,7 +8,7 @@ import addressFieldOptions from '../address-fields-options';
   templateUrl: './address-form.component.html',
   styleUrls: ['./address-form.component.css']
 })
-export class AddressFormComponent extends FormComponent{
+export class AddressFormComponent extends FormComponent {
   static makeForm(formBuild: FormBuilder) {
     const o = addressFieldOptions;
     return formBuild.group({

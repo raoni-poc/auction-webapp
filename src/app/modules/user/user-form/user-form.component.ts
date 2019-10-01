@@ -8,7 +8,7 @@ import userFieldOptions from '../user-fields-options';
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.css']
 })
-export class UserFormComponent extends FormComponent{
+export class UserFormComponent extends FormComponent {
   static makeForm(formBuild: FormBuilder) {
     const o = userFieldOptions;
     return formBuild.group({

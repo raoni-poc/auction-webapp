@@ -5,7 +5,7 @@ const offerTypeFieldOptions: FieldsOptions = {
     id: 'name',
     label: 'Nome',
     placeholder: 'Tipo da Oferta.',
-    validationMessage:{
+    validationMessage: {
       minlength: 3,
       maxlength: 255,
     }

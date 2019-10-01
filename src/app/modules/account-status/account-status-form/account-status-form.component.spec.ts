@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AccountStatusFormComponent } from './account-status-form.component';
+import {AccountStatusFormComponent} from './account-status-form.component';
 
 describe('AccountStatusFormComponent', () => {
   let component: AccountStatusFormComponent;
@@ -8,9 +8,9 @@ describe('AccountStatusFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AccountStatusFormComponent ]
+      declarations: [AccountStatusFormComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

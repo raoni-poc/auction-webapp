@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {CompanyHttpService} from '../../company/company-http.service';
+import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder} from '@angular/forms';
 import {Location} from '@angular/common';
@@ -12,8 +11,7 @@ import {CollectionComponent} from '../../common/abstract/collection/collection.c
   templateUrl: './city-table.component.html',
   styleUrls: ['./city-table.component.css']
 })
-export class CityTableComponent extends CollectionComponent{
-  successMessage = 'Cidade criada com sucesso.';
+export class CityTableComponent extends CollectionComponent {
   sortColumn = {column: 'created_at', sort: 'desc'};
 
   constructor(service: CityHttpService,

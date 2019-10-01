@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {CompanyHttpService} from '../../company/company-http.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder} from '@angular/forms';
@@ -11,8 +11,7 @@ import {CollectionComponent} from '../../common/abstract/collection/collection.c
   templateUrl: './permission-table.component.html',
   styleUrls: ['./permission-table.component.css']
 })
-export class PermissionTableComponent extends CollectionComponent{
-  successMessage = 'Permissão criada com sucesso.';
+export class PermissionTableComponent extends CollectionComponent {
   sortColumn = {column: 'created_at', sort: 'desc'};
 
   constructor(service: CompanyHttpService,

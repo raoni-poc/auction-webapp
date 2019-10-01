@@ -1,6 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
-import companyFieldOptions from '../../company/company-fields-options';
 import {FormComponent} from '../../common/abstract/form.component';
 import offerFieldOptions from '../offer-fields-options';
 

@@ -12,7 +12,6 @@ import {NotifyMessageService} from '../../common/notify-message/notify-message.s
   styleUrls: ['./state-table.component.css']
 })
 export class StateTableComponent extends CollectionComponent {
-  successMessage = 'Estado cradastrado com sucesso.';
   sortColumn = {column: 'created_at', sort: 'desc'};
 
   constructor(service: CompanyHttpService,

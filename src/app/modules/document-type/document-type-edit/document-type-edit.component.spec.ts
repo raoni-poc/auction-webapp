@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DocumentTypeEditComponent } from './document-type-edit.component';
+import {DocumentTypeEditComponent} from './document-type-edit.component';
 
 describe('DocumentTypeEditComponent', () => {
   let component: DocumentTypeEditComponent;
@@ -8,9 +8,9 @@ describe('DocumentTypeEditComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DocumentTypeEditComponent ]
+      declarations: [DocumentTypeEditComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

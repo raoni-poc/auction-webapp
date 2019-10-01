@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {CompanyHttpService} from '../../company/company-http.service';
+import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder} from '@angular/forms';
 import {Location} from '@angular/common';
@@ -12,8 +11,7 @@ import {BidHttpService} from '../bid-http.service';
   templateUrl: './bid-table.component.html',
   styleUrls: ['./bid-table.component.css']
 })
-export class BidTableComponent extends CollectionComponent{
-  successMessage = 'Lance oferecido com sucesso.';
+export class BidTableComponent extends CollectionComponent {
   sortColumn = {column: 'created_at', sort: 'desc'};
 
   constructor(service: BidHttpService,

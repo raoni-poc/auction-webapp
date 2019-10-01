@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { RouteTableComponent } from './route-table.component';
+import {RouteTableComponent} from './route-table.component';
 
 describe('RouteTableComponent', () => {
   let component: RouteTableComponent;
@@ -8,9 +8,9 @@ describe('RouteTableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RouteTableComponent ]
+      declarations: [RouteTableComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

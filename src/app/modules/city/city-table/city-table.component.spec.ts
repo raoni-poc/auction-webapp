@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CityTableComponent } from './city-table.component';
+import {CityTableComponent} from './city-table.component';
 
 describe('CityTableComponent', () => {
   let component: CityTableComponent;
@@ -8,9 +8,9 @@ describe('CityTableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CityTableComponent ]
+      declarations: [CityTableComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

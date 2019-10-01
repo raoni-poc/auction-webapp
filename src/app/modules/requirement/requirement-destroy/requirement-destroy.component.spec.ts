@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { RequirementDestroyComponent } from './requirement-destroy.component';
+import {RequirementDestroyComponent} from './requirement-destroy.component';
 
 describe('RequirementDestroyComponent', () => {
   let component: RequirementDestroyComponent;
@@ -8,9 +8,9 @@ describe('RequirementDestroyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RequirementDestroyComponent ]
+      declarations: [RequirementDestroyComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

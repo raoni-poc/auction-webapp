@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AddressShowComponent } from './address-show.component';
+import {AddressShowComponent} from './address-show.component';
 
 describe('AddressShowComponent', () => {
   let component: AddressShowComponent;
@@ -8,9 +8,9 @@ describe('AddressShowComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddressShowComponent ]
+      declarations: [AddressShowComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

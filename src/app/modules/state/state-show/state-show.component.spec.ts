@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { StateShowComponent } from './state-show.component';
+import {StateShowComponent} from './state-show.component';
 
 describe('StateShowComponent', () => {
   let component: StateShowComponent;
@@ -8,9 +8,9 @@ describe('StateShowComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StateShowComponent ]
+      declarations: [StateShowComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

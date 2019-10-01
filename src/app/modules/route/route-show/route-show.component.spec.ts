@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { RouteShowComponent } from './route-show.component';
+import {RouteShowComponent} from './route-show.component';
 
 describe('RouteShowComponent', () => {
   let component: RouteShowComponent;
@@ -8,9 +8,9 @@ describe('RouteShowComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RouteShowComponent ]
+      declarations: [RouteShowComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

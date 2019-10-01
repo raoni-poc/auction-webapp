@@ -1,1 +1,24 @@
-<p>permission-form works!</p>
+<div [formGroup]="form">
+  <div class="form-group">
+    <label [for]="fieldOptions.name.id">{{fieldOptions.name.label}}</label>
+    <input type="text"
+           class="form-control"
+           [id]="fieldOptions.name.id"
+           [placeholder]="fieldOptions.name.placeholder"
+           formControlName="name">
+    <app-field-error [field]="form.get('name')"
+                     [label]="fieldOptions.name.label"
+                     [messages]="fieldOptions.name.validationMessage"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.guard_name.id">{{fieldOptions.guard_name.label}}</label>
+    <input type="text"
+           class="form-control"
+           [id]="fieldOptions.guard_name.id"
+           [placeholder]="fieldOptions.guard_name.placeholder"
+           formControlName="guard_name">
+    <app-field-error [field]="form.get('guard_name')"
+                     [label]="fieldOptions.guard_name.label"
+                     [messages]="fieldOptions.guard_name.validationMessage"></app-field-error>
+  </div>
+</div>

@@ -8,7 +8,7 @@ import {FormComponent} from '../../common/abstract/form.component';
   templateUrl: './account-status-form.component.html',
   styleUrls: ['./account-status-form.component.css']
 })
-export class AccountStatusFormComponent extends FormComponent{
+export class AccountStatusFormComponent extends FormComponent {
 
   static makeForm(formBuild: FormBuilder) {
     const o = accountStatusFieldOptions;

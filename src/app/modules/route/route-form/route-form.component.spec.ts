@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { RouteFormComponent } from './route-form.component';
+import {RouteFormComponent} from './route-form.component';
 
 describe('RouteFormComponent', () => {
   let component: RouteFormComponent;
@@ -8,9 +8,9 @@ describe('RouteFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RouteFormComponent ]
+      declarations: [RouteFormComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

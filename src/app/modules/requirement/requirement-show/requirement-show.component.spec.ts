@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { RequirementShowComponent } from './requirement-show.component';
+import {RequirementShowComponent} from './requirement-show.component';
 
 describe('RequirementShowComponent', () => {
   let component: RequirementShowComponent;
@@ -8,9 +8,9 @@ describe('RequirementShowComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RequirementShowComponent ]
+      declarations: [RequirementShowComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

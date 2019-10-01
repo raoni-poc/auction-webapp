@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { OfferTypeFormComponent } from './offer-type-form.component';
+import {OfferTypeFormComponent} from './offer-type-form.component';
 
 describe('OfferTypeFormComponent', () => {
   let component: OfferTypeFormComponent;
@@ -8,9 +8,9 @@ describe('OfferTypeFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OfferTypeFormComponent ]
+      declarations: [OfferTypeFormComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

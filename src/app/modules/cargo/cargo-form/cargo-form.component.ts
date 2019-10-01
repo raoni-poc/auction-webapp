@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import cargoFieldsOptions from '../cargo-fields-options';
 import {FormComponent} from '../../common/abstract/form.component';
@@ -8,7 +8,7 @@ import {FormComponent} from '../../common/abstract/form.component';
   templateUrl: './cargo-form.component.html',
   styleUrls: ['./cargo-form.component.css']
 })
-export class CargoFormComponent extends FormComponent{
+export class CargoFormComponent extends FormComponent {
 
   static makeForm(formBuild: FormBuilder) {
     const o = cargoFieldsOptions;

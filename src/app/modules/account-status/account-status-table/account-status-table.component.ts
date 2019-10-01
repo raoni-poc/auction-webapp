@@ -12,7 +12,6 @@ import {NotifyMessageService} from '../../common/notify-message/notify-message.s
   styleUrls: ['./account-status-table.component.css']
 })
 export class AccountStatusTableComponent extends CollectionComponent {
-  successMessage = 'Status de conta criado com sucesso.';
   sortColumn = {column: 'created_at', sort: 'desc'};
 
   constructor(service: AccountStatusHttpService,

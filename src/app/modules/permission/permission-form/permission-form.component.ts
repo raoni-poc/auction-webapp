@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
-import companyFieldOptions from '../../company/company-fields-options';
 import {FormComponent} from '../../common/abstract/form.component';
+import permissionFieldOptions from '../permission-fields-options';
 
 @Component({
   selector: 'app-permission-form',
@@ -11,7 +11,7 @@ import {FormComponent} from '../../common/abstract/form.component';
 export class PermissionFormComponent extends FormComponent {
 
   static makeForm(formBuild: FormBuilder) {
-    const o = companyFieldOptions;
+    const o = permissionFieldOptions;
     return formBuild.group({
       name: ['Permissão ' + (new Date().getTime()), [
         Validators.required,
@@ -27,6 +27,6 @@ export class PermissionFormComponent extends FormComponent {
   }
 
   get fieldOptions(): any {
-    return companyFieldOptions;
+    return permissionFieldOptions;
   }
 }

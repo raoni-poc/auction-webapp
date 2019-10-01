@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DocumentTypeTableComponent } from './document-type-table.component';
+import {DocumentTypeTableComponent} from './document-type-table.component';
 
 describe('DocumentTypeTableComponent', () => {
   let component: DocumentTypeTableComponent;
@@ -8,9 +8,9 @@ describe('DocumentTypeTableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DocumentTypeTableComponent ]
+      declarations: [DocumentTypeTableComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

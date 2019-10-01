@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
-import companyFieldOptions from '../../company/company-fields-options';
 import {FormComponent} from '../../common/abstract/form.component';
 import cityFieldOptions from '../city-fields-options';
 
@@ -9,7 +8,7 @@ import cityFieldOptions from '../city-fields-options';
   templateUrl: './city-form.component.html',
   styleUrls: ['./city-form.component.css']
 })
-export class CityFormComponent extends FormComponent{
+export class CityFormComponent extends FormComponent {
 
   static makeForm(formBuild: FormBuilder) {
     const o = cityFieldOptions;

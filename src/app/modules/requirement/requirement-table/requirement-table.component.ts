@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {CompanyHttpService} from '../../company/company-http.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder} from '@angular/forms';
@@ -11,8 +11,7 @@ import {CollectionComponent} from '../../common/abstract/collection/collection.c
   templateUrl: './requirement-table.component.html',
   styleUrls: ['./requirement-table.component.css']
 })
-export class RequirementTableComponent extends CollectionComponent{
-  successMessage = 'Requisito cridado com sucesso.';
+export class RequirementTableComponent extends CollectionComponent {
   sortColumn = {column: 'created_at', sort: 'desc'};
 
   constructor(service: CompanyHttpService,

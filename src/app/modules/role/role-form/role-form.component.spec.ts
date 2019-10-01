@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { RoleFormComponent } from './role-form.component';
+import {RoleFormComponent} from './role-form.component';
 
 describe('RoleFormComponent', () => {
   let component: RoleFormComponent;
@@ -8,9 +8,9 @@ describe('RoleFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RoleFormComponent ]
+      declarations: [RoleFormComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

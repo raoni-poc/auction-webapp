@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { UserDestroyComponent } from './user-destroy.component';
+import {UserDestroyComponent} from './user-destroy.component';
 
 describe('UserDestroyComponent', () => {
   let component: UserDestroyComponent;
@@ -8,9 +8,9 @@ describe('UserDestroyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserDestroyComponent ]
+      declarations: [UserDestroyComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DocumentTypeDestroyComponent } from './document-type-destroy.component';
+import {DocumentTypeDestroyComponent} from './document-type-destroy.component';
 
 describe('DocumentTypeDestroyComponent', () => {
   let component: DocumentTypeDestroyComponent;
@@ -8,9 +8,9 @@ describe('DocumentTypeDestroyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DocumentTypeDestroyComponent ]
+      declarations: [DocumentTypeDestroyComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

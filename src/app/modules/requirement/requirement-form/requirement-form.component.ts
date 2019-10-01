@@ -16,9 +16,6 @@ export class RequirementFormComponent extends FormComponent {
         Validators.required,
         Validators.minLength(o.name.validationMessage.minlength),
         Validators.maxLength(o.name.validationMessage.maxlength)
-      ]],
-      trade_name: ['Id do tipo' + (new Date().getTime()), [
-        Validators.required
       ]]
     });
   }

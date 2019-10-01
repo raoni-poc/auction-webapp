@@ -1,1 +1,35 @@
-<p>cargo-form works!</p>
+<div [formGroup]="form">
+  <div class="form-group">
+    <label [for]="fieldOptions.cargo.id">{{fieldOptions.cargo.label}}</label>
+    <input type="text"
+           class="form-control"
+           [id]="fieldOptions.cargo.id"
+           [placeholder]="fieldOptions.cargo.placeholder"
+           formControlName="cargo">
+    <app-field-error [field]="form.get('cargo')"
+                     [label]="fieldOptions.cargo.label"
+                     [messages]="fieldOptions.cargo.validationMessage"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.packing.id">{{fieldOptions.packing.label}}</label>
+    <input type="text"
+           class="form-control"
+           [id]="fieldOptions.packing.id"
+           [placeholder]="fieldOptions.packing.placeholder"
+           formControlName="packing">
+    <app-field-error [field]="form.get('packing')"
+                     [label]="fieldOptions.packing.label"
+                     [messages]="fieldOptions.packing.validationMessage"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.description.id">{{fieldOptions.description.label}}</label>
+    <textarea
+      class="form-control"
+      [id]="fieldOptions.description.id"
+      [placeholder]="fieldOptions.description.placeholder"
+      formControlName="description"></textarea>
+    <app-field-error [field]="form.get('description')"
+                     [label]="fieldOptions.description.label"
+                     [messages]="fieldOptions.description.validationMessage"></app-field-error>
+  </div>
+</div>

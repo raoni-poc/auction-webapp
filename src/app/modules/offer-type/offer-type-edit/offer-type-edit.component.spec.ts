@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { OfferTypeEditComponent } from './offer-type-edit.component';
+import {OfferTypeEditComponent} from './offer-type-edit.component';
 
 describe('OfferTypeEditComponent', () => {
   let component: OfferTypeEditComponent;
@@ -8,9 +8,9 @@ describe('OfferTypeEditComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OfferTypeEditComponent ]
+      declarations: [OfferTypeEditComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

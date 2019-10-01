@@ -12,7 +12,6 @@ import {NotifyMessageService} from '../../common/notify-message/notify-message.s
   styleUrls: ['./company-table.component.css']
 })
 export class CompanyTableComponent extends CollectionComponent {
-  successMessage = 'Empresa criada com sucesso.';
   sortColumn = {column: 'created_at', sort: 'desc'};
 
   constructor(service: CompanyHttpService,

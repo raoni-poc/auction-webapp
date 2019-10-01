@@ -5,7 +5,7 @@ import {HttpService} from '../common/abstract/service/http.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AddressHttpService extends HttpService{
+export class AddressHttpService extends HttpService {
   constructor(protected http: HttpClient) {
     super(http);
     this.slug = 'address';

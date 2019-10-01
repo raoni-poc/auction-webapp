@@ -1,1 +1,25 @@
-<p>route-form works!</p>
+<div [formGroup]="form">
+  <div class="form-group">
+    <label [for]="fieldOptions.address_origin_id.id">{{fieldOptions.address_origin_id.label}}</label>
+    <input type="number"
+           class="form-control"
+           [id]="fieldOptions.address_origin_id.id"
+           [placeholder]="fieldOptions.address_origin_id.placeholder"
+           formControlName="address_origin_id">
+    <app-field-error [field]="form.get('address_origin_id')"
+                     [label]="fieldOptions.address_origin_id.label"
+                     [messages]="fieldOptions.address_origin_id.validationMessage"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.address_destination_id.id">{{fieldOptions.address_destination_id.label}}</label>
+    <input type="number"
+           class="form-control"
+           [id]="fieldOptions.address_destination_id.id"
+           [placeholder]="fieldOptions.address_destination_id.placeholder"
+           formControlName="address_destination_id">
+    <app-field-error [field]="form.get('address_destination_id')"
+                     [label]="fieldOptions.address_destination_id.label"
+                     [messages]="fieldOptions.address_destination_id.validationMessage"></app-field-error>
+  </div>
+</div>
+

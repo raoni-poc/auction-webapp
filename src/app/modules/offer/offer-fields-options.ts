@@ -14,7 +14,7 @@ const offerFieldOptions: FieldsOptions = {
     label: 'Tipo',
   },
   start_price: {
-    id: 'offer_type_id',
+    id: 'start_price',
     label: 'Preço'
   },
   description: {

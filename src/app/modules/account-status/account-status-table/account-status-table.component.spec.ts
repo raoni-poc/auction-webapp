@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AccountStatusTableComponent } from './account-status-table.component';
+import {AccountStatusTableComponent} from './account-status-table.component';
 
 describe('AccountStatusTableComponent', () => {
   let component: AccountStatusTableComponent;
@@ -8,9 +8,9 @@ describe('AccountStatusTableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AccountStatusTableComponent ]
+      declarations: [AccountStatusTableComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

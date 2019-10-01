@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { RequirementTableComponent } from './requirement-table.component';
+import {RequirementTableComponent} from './requirement-table.component';
 
 describe('RequirementTableComponent', () => {
   let component: RequirementTableComponent;
@@ -8,9 +8,9 @@ describe('RequirementTableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RequirementTableComponent ]
+      declarations: [RequirementTableComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { BidDestroyComponent } from './bid-destroy.component';
+import {BidDestroyComponent} from './bid-destroy.component';
 
 describe('BidDestroyComponent', () => {
   let component: BidDestroyComponent;
@@ -8,9 +8,9 @@ describe('BidDestroyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BidDestroyComponent ]
+      declarations: [BidDestroyComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

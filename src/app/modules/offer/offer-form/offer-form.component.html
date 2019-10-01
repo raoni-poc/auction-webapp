@@ -1,1 +1,57 @@
-<p>offer-form works!</p>
+<div [formGroup]="form">
+  <div class="form-group">
+    <label [for]="fieldOptions.route_id.id">{{fieldOptions.route_id.label}}</label>
+    <input type="text"
+           class="form-control"
+           [id]="fieldOptions.route_id.id"
+           [placeholder]="fieldOptions.route_id.placeholder"
+           formControlName="route_id">
+    <app-field-error [field]="form.get('route_id')"
+                     [label]="fieldOptions.route_id.label"
+                     [messages]="fieldOptions.route_id.validationMessage"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.cargo_id.id">{{fieldOptions.cargo_id.label}}</label>
+    <input type="text"
+           class="form-control"
+           [id]="fieldOptions.cargo_id.id"
+           [placeholder]="fieldOptions.cargo_id.placeholder"
+           formControlName="cargo_id">
+    <app-field-error [field]="form.get('cargo_id')"
+                     [label]="fieldOptions.cargo_id.label"
+                     [messages]="fieldOptions.cargo_id.validationMessage"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.offer_type_id.id">{{fieldOptions.offer_type_id.label}}</label>
+    <input type="text"
+           class="form-control"
+           [id]="fieldOptions.offer_type_id.id"
+           [placeholder]="fieldOptions.offer_type_id.placeholder"
+           formControlName="offer_type_id">
+    <app-field-error [field]="form.get('offer_type_id')"
+                     [label]="fieldOptions.offer_type_id.label"
+                     [messages]="fieldOptions.offer_type_id.validationMessage"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.start_price.id">{{fieldOptions.start_price.label}}</label>
+    <input type="text"
+           class="form-control"
+           [id]="fieldOptions.start_price.id"
+           [placeholder]="fieldOptions.start_price.placeholder"
+           formControlName="start_price">
+    <app-field-error [field]="form.get('start_price')"
+                     [label]="fieldOptions.start_price.label"
+                     [messages]="fieldOptions.start_price.validationMessage"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.description.id">{{fieldOptions.description.label}}</label>
+    <input type="text"
+           class="form-control"
+           [id]="fieldOptions.description.id"
+           [placeholder]="fieldOptions.description.placeholder"
+           formControlName="description">
+    <app-field-error [field]="form.get('description')"
+                     [label]="fieldOptions.description.label"
+                     [messages]="fieldOptions.description.validationMessage"></app-field-error>
+  </div>
+</div>

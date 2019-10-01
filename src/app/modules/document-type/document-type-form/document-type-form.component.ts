@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
-import companyFieldOptions from '../../company/company-fields-options';
 import documentTypeFieldOptions from '../document-type-fields-options';
 import {FormComponent} from '../../common/abstract/form.component';
 
@@ -9,7 +8,7 @@ import {FormComponent} from '../../common/abstract/form.component';
   templateUrl: './document-type-form.component.html',
   styleUrls: ['./document-type-form.component.css']
 })
-export class DocumentTypeFormComponent extends FormComponent{
+export class DocumentTypeFormComponent extends FormComponent {
 
   static makeForm(formBuild: FormBuilder) {
     const o = documentTypeFieldOptions;

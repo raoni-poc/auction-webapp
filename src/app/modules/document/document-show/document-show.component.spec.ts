@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DocumentShowComponent } from './document-show.component';
+import {DocumentShowComponent} from './document-show.component';
 
 describe('DocumentShowComponent', () => {
   let component: DocumentShowComponent;
@@ -8,9 +8,9 @@ describe('DocumentShowComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DocumentShowComponent ]
+      declarations: [DocumentShowComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

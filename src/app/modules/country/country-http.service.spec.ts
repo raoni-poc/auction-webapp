@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { CountryHttpService } from './country-http.service';
+import {CountryHttpService} from './country-http.service';
 
 describe('CountryHttpService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

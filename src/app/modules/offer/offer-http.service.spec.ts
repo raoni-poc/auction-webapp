@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { OfferHttpService } from './offer-http.service';
+import {OfferHttpService} from './offer-http.service';
 
 describe('OfferHttpService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

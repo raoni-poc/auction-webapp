@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { BidTableComponent } from './bid-table.component';
+import {BidTableComponent} from './bid-table.component';
 
 describe('BidTableComponent', () => {
   let component: BidTableComponent;
@@ -8,9 +8,9 @@ describe('BidTableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BidTableComponent ]
+      declarations: [BidTableComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

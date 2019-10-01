@@ -5,6 +5,7 @@ import {Observable} from 'rxjs';
 export abstract class CollectionComponent extends AbstractComponent implements OnInit {
 
   abstract sortColumn: { column: string, sort: string };
+  successMessage = '';
   collection: Array<any> = [];
   pagination = {
     page: 1,

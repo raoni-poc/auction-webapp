@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { OfferDestroyComponent } from './offer-destroy.component';
+import {OfferDestroyComponent} from './offer-destroy.component';
 
 describe('OfferDestroyComponent', () => {
   let component: OfferDestroyComponent;
@@ -8,9 +8,9 @@ describe('OfferDestroyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OfferDestroyComponent ]
+      declarations: [OfferDestroyComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

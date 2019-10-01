@@ -12,7 +12,6 @@ import {CollectionComponent} from '../../common/abstract/collection/collection.c
   styleUrls: ['./route-table.component.css']
 })
 export class RouteTableComponent extends CollectionComponent {
-  successMessage = 'Rota criada com sucesso.';
   sortColumn = {column: 'created_at', sort: 'desc'};
 
   constructor(service: CompanyHttpService,

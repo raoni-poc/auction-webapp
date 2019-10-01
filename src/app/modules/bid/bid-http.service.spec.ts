@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { BidHttpService } from './bid-http.service';
+import {BidHttpService} from './bid-http.service';
 
 describe('BidHttpService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

@@ -148,7 +148,7 @@ import { UserTableComponent } from './modules/user/user-table/user-table.compone
     ReactiveFormsModule,
     Select2Module,
   ],
-  exports: [AppComponent, CardErrorComponent],
+  exports: [AppComponent, CardErrorComponent, FieldErrorComponent],
   entryComponents: [AppComponent],
   providers: [],
   bootstrap: [AppComponent]

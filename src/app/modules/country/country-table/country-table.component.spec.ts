@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CountryTableComponent } from './country-table.component';
+import {CountryTableComponent} from './country-table.component';
 
 describe('CountryTableComponent', () => {
   let component: CountryTableComponent;
@@ -8,9 +8,9 @@ describe('CountryTableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CountryTableComponent ]
+      declarations: [CountryTableComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

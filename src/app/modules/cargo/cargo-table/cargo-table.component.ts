@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {CompanyHttpService} from '../../company/company-http.service';
+import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder} from '@angular/forms';
 import {Location} from '@angular/common';
@@ -12,8 +11,7 @@ import {CargoHttpService} from '../cargo-http.service';
   templateUrl: './cargo-table.component.html',
   styleUrls: ['./cargo-table.component.css']
 })
-export class CargoTableComponent extends CollectionComponent{
-  successMessage = 'Carga criada com sucesso.';
+export class CargoTableComponent extends CollectionComponent {
   sortColumn = {column: 'created_at', sort: 'desc'};
 
   constructor(service: CargoHttpService,

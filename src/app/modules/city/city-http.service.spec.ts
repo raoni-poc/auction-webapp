@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { CityHttpService } from './city-http.service';
+import {CityHttpService} from './city-http.service';
 
 describe('CityHttpService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

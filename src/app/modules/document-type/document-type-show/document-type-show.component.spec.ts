@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DocumentTypeShowComponent } from './document-type-show.component';
+import {DocumentTypeShowComponent} from './document-type-show.component';
 
 describe('DocumentTypeShowComponent', () => {
   let component: DocumentTypeShowComponent;
@@ -8,9 +8,9 @@ describe('DocumentTypeShowComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DocumentTypeShowComponent ]
+      declarations: [DocumentTypeShowComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

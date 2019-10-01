@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { RequirementHttpService } from './requirement-http.service';
+import {RequirementHttpService} from './requirement-http.service';
 
 describe('RequirementHttpService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {CompanyHttpService} from '../../company/company-http.service';
+import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder} from '@angular/forms';
 import {Location} from '@angular/common';
@@ -12,8 +11,7 @@ import {AddressHttpService} from '../address-http.service';
   templateUrl: './address-table.component.html',
   styleUrls: ['./address-table.component.css']
 })
-export class AddressTableComponent extends CollectionComponent{
-  successMessage = 'Endereço criado com sucesso.';
+export class AddressTableComponent extends CollectionComponent {
   sortColumn = {column: 'created_at', sort: 'desc'};
 
   constructor(service: AddressHttpService,

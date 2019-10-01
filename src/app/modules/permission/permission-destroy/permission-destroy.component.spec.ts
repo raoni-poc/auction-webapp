@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PermissionDestroyComponent } from './permission-destroy.component';
+import {PermissionDestroyComponent} from './permission-destroy.component';
 
 describe('PermissionDestroyComponent', () => {
   let component: PermissionDestroyComponent;
@@ -8,9 +8,9 @@ describe('PermissionDestroyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PermissionDestroyComponent ]
+      declarations: [PermissionDestroyComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

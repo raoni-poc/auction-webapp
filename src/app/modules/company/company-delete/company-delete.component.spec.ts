@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CompanyDeleteComponent } from './company-delete.component';
+import {CompanyDeleteComponent} from './company-delete.component';
 
 describe('CompanyDeleteComponent', () => {
   let component: CompanyDeleteComponent;
@@ -8,9 +8,9 @@ describe('CompanyDeleteComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CompanyDeleteComponent ]
+      declarations: [CompanyDeleteComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,5 +1,5 @@
 export interface Company {
-  id ?: number;
+  id?: number;
   name: string;
   trade_name: string;
   account_status_id: string;

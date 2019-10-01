@@ -1,1 +1,79 @@
-<p>address-form works!</p>
+<div [formGroup]="form">
+  <div class="form-group">
+    <label [for]="fieldOptions.city_id.id">{{fieldOptions.city_id.label}}</label>
+    <input type="text"
+           class="form-control"
+           [id]="fieldOptions.city_id.id"
+           [placeholder]="fieldOptions.city_id.placeholder"
+           formControlName="city_id">
+    <app-field-error [field]="form.get('city_id')"
+                     [label]="fieldOptions.city_id.label"
+                     [messages]="fieldOptions.city_id.validationMessage"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.number.id">{{fieldOptions.number.label}}</label>
+    <input type="text"
+           class="form-control"
+           [id]="fieldOptions.number.id"
+           [placeholder]="fieldOptions.number.placeholder"
+           formControlName="number">
+    <app-field-error [field]="form.get('number')"
+                     [label]="fieldOptions.number.label"
+                     [messages]="fieldOptions.number.validationMessage"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.zip_code.id">{{fieldOptions.zip_code.label}}</label>
+    <input type="text"
+           class="form-control"
+           [id]="fieldOptions.zip_code.id"
+           [placeholder]="fieldOptions.zip_code.placeholder"
+           formControlName="zip_code">
+    <app-field-error [field]="form.get('zip_code')"
+                     [label]="fieldOptions.zip_code.label"
+                     [messages]="fieldOptions.zip_code.validationMessage"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.neighborhood.id">{{fieldOptions.neighborhood.label}}</label>
+    <input type="text"
+           class="form-control"
+           [id]="fieldOptions.neighborhood.id"
+           [placeholder]="fieldOptions.neighborhood.placeholder"
+           formControlName="neighborhood">
+    <app-field-error [field]="form.get('neighborhood')"
+                     [label]="fieldOptions.neighborhood.label"
+                     [messages]="fieldOptions.neighborhood.validationMessage"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.complement.id">{{fieldOptions.complement.label}}</label>
+    <input type="text"
+           class="form-control"
+           [id]="fieldOptions.complement.id"
+           [placeholder]="fieldOptions.complement.placeholder"
+           formControlName="complement">
+    <app-field-error [field]="form.get('complement')"
+                     [label]="fieldOptions.complement.label"
+                     [messages]="fieldOptions.complement.validationMessage"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.note.id">{{fieldOptions.note.label}}</label>
+    <input type="text"
+           class="form-control"
+           [id]="fieldOptions.note.id"
+           [placeholder]="fieldOptions.note.placeholder"
+           formControlName="note">
+    <app-field-error [field]="form.get('note')"
+                     [label]="fieldOptions.note.label"
+                     [messages]="fieldOptions.note.validationMessage"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.address.id">{{fieldOptions.address.label}}</label>
+    <input type="text"
+           class="form-control"
+           [id]="fieldOptions.address.id"
+           [placeholder]="fieldOptions.address.placeholder"
+           formControlName="address">
+    <app-field-error [field]="form.get('address')"
+                     [label]="fieldOptions.address.label"
+                     [messages]="fieldOptions.address.validationMessage"></app-field-error>
+  </div>
+</div>

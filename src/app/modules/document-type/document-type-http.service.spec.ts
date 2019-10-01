@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { DocumentTypeHttpService } from './document-type-http.service';
+import {DocumentTypeHttpService} from './document-type-http.service';
 
 describe('DocumentTypeHttpService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

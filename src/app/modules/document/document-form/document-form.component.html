@@ -1,1 +1,46 @@
-<p>document-form works!</p>
+<div [formGroup]="form">
+  <div class="form-group">
+    <label [for]="fieldOptions.content.id">{{fieldOptions.content.label}}</label>
+    <input type="text"
+           class="form-control"
+           [id]="fieldOptions.content.id"
+           [placeholder]="fieldOptions.content.placeholder"
+           formControlName="content">
+    <!--  <app-field-error [field]="form.get('content')"-->
+    <!--                   [label]="fieldOptions.content.label"-->
+    <!--                   [messages]="fieldOptions.content.validationMessage"></app-field-error>-->
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.file.id">{{fieldOptions.file.label}}</label>
+    <input type="file"
+           class="form-control"
+           [id]="fieldOptions.file.id"
+           [placeholder]="fieldOptions.file.placeholder"
+           formControlName="file">
+    <!--  <app-field-error [field]="form.get('file')"-->
+    <!--                   [label]="fieldOptions.file.label"-->
+    <!--                   [messages]="fieldOptions.file.validationMessage"></app-field-error>-->
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.expiration_date.id">{{fieldOptions.expiration_date.label}}</label>
+    <input type="date"
+           class="form-control"
+           [id]="fieldOptions.expiration_date.id"
+           [placeholder]="fieldOptions.expiration_date.placeholder"
+           formControlName="expiration_date">
+    <!--  <app-field-error [field]="form.get('expiration_date')"-->
+    <!--                   [label]="fieldOptions.expiration_date.label"-->
+    <!--                   [messages]="fieldOptions.expiration_date.validationMessage"></app-field-error>-->
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.document_type.id">{{fieldOptions.document_type.label}}</label>
+    <input type="number"
+           class="form-control"
+           [id]="fieldOptions.document_type.id"
+           [placeholder]="fieldOptions.document_type.placeholder"
+           formControlName="document_type">
+    <!--  <app-field-error [field]="form.get('document_type')"-->
+    <!--                   [label]="fieldOptions.document_type.label"-->
+    <!--                   [messages]="fieldOptions.document_type.validationMessage"></app-field-error>-->
+  </div>
+</div>

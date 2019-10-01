@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { RequirementTypeInsertComponent } from './requirement-type-insert.component';
+import {RequirementTypeInsertComponent} from './requirement-type-insert.component';
 
 describe('RequirementTypeInsertComponent', () => {
   let component: RequirementTypeInsertComponent;
@@ -8,9 +8,9 @@ describe('RequirementTypeInsertComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RequirementTypeInsertComponent ]
+      declarations: [RequirementTypeInsertComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,1 +1,24 @@
-<p>country-form works!</p>
+<div [formGroup]="form">
+  <div class="form-group">
+    <label [for]="fieldOptions.name.id">{{fieldOptions.name.label}}</label>
+    <input type="text"
+           class="form-control"
+           [id]="fieldOptions.name.id"
+           [placeholder]="fieldOptions.name.placeholder"
+           formControlName="name">
+    <app-field-error [field]="form.get('name')"
+                     [label]="fieldOptions.name.label"
+                     [messages]="fieldOptions.name.validationMessage"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.abbreviation.id">{{fieldOptions.abbreviation.label}}</label>
+    <input type="text"
+           class="form-control"
+           [id]="fieldOptions.abbreviation.id"
+           [placeholder]="fieldOptions.abbreviation.placeholder"
+           formControlName="abbreviation">
+    <app-field-error [field]="form.get('abbreviation')"
+                     [label]="fieldOptions.abbreviation.label"
+                     [messages]="fieldOptions.abbreviation.validationMessage"></app-field-error>
+  </div>
+</div>

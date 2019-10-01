@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { RoleHttpService } from './role-http.service';
+import {RoleHttpService} from './role-http.service';
 
 describe('RoleHttpService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

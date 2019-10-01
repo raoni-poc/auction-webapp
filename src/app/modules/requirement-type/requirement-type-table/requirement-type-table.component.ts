@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CompanyHttpService} from '../../company/company-http.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder} from '@angular/forms';
@@ -11,7 +11,7 @@ import {CollectionComponent} from '../../common/abstract/collection/collection.c
   templateUrl: './requirement-type-table.component.html',
   styleUrls: ['./requirement-type-table.component.css']
 })
-export class RequirementTypeTableComponent extends CollectionComponent{
+export class RequirementTypeTableComponent extends CollectionComponent {
   successMessage = 'Tipo de requisito cadastrado com sucesso.';
   sortColumn = {column: 'created_at', sort: 'desc'};
 

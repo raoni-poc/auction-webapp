@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DocumentTypeFormComponent } from './document-type-form.component';
+import {DocumentTypeFormComponent} from './document-type-form.component';
 
 describe('DocumentTypeFormComponent', () => {
   let component: DocumentTypeFormComponent;
@@ -8,9 +8,9 @@ describe('DocumentTypeFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DocumentTypeFormComponent ]
+      declarations: [DocumentTypeFormComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
