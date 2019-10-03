@@ -47,13 +47,4 @@ export abstract class CollectionComponent extends AbstractComponent implements O
       search: this.searchText
     });
   }
-
-  hydrateForm(response) {
-  }
-
-  makeForm() {
-  }
-
-  resetForm() {
-  }
 }

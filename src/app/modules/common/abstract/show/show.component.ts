@@ -1,21 +1,21 @@
 import {AbstractComponent} from '../abstract.component';
 import {HttpService} from '../service/http.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {FormBuilder} from '@angular/forms';
 import {NotifyMessageService} from '../../notify-message/notify-message.service.ts.service';
 import {Location} from '@angular/common';
 import {Observable} from 'rxjs';
+import {FormService} from '../form.service';
 
 export abstract class ShowComponent extends AbstractComponent {
   successMessage = '';
 
   protected constructor(protected service: HttpService,
                         protected route: ActivatedRoute,
-                        protected formBuilder: FormBuilder,
+                        protected formService: FormService,
                         protected location: Location,
                         protected router: Router,
                         protected notifyMessage: NotifyMessageService) {
-    super(service, route, formBuilder, location, router, notifyMessage);
+    super(service, route, formService, location, router, notifyMessage);
     this.form.disable();
   }
 

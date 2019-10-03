@@ -1,7 +1,5 @@
-import {ChangeDetectorRef, Component, Input, OnChanges, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import accountStatusFieldOptions from '../account-status-fields-options';
-import {FormComponent} from '../../common/abstract/form.component';
+import {Component} from '@angular/core';
+import {FormComponent} from '../../common/abstract/formComponent';
 
 @Component({
   selector: 'app-account-status-form',
@@ -9,20 +7,4 @@ import {FormComponent} from '../../common/abstract/form.component';
   styleUrls: ['./account-status-form.component.css']
 })
 export class AccountStatusFormComponent extends FormComponent {
-
-  static makeForm(formBuild: FormBuilder) {
-    const o = accountStatusFieldOptions;
-    return formBuild.group({
-      name: ['Status' + (new Date().getTime()), [
-        Validators.required,
-        Validators.minLength(o.name.validationMessage.minlength),
-        Validators.maxLength(o.name.validationMessage.maxlength)
-      ]]
-    });
-  }
-
-  get fieldOptions(): any {
-    return accountStatusFieldOptions;
-  }
-
 }

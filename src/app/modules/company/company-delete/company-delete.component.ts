@@ -1,11 +1,10 @@
 import {Component} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
 import {CompanyHttpService} from '../company-http.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {NotifyMessageService} from '../../common/notify-message/notify-message.service.ts.service';
 import {DestroyComponent} from '../../common/abstract/destroy/destroy.component';
-import {CompanyFormComponent} from '../company-form/company-form.component';
+import {CompanyFormService} from '../company-form/company-form.service';
 
 @Component({
   selector: 'app-company-delete',
@@ -13,25 +12,15 @@ import {CompanyFormComponent} from '../company-form/company-form.component';
   styleUrls: ['./company-delete.component.css']
 })
 export class CompanyDeleteComponent extends DestroyComponent {
-  slug = 'company';
   successMessage = 'Empresa removida com sucesso.';
 
   constructor(service: CompanyHttpService,
               route: ActivatedRoute,
-              formBuilder: FormBuilder,
+              formService: CompanyFormService,
               location: Location,
               router: Router,
               notifyMessage: NotifyMessageService) {
-    super(service, route, formBuilder, location, router, notifyMessage);
+    super(service, route, formService, location, router, notifyMessage);
     this.form.disable();
-  }
-
-  hydrateForm(response) {
-    this.form.get('name').setValue(response.name);
-    this.form.get('trade_name').setValue(response.trade_name);
-  }
-
-  makeForm(): FormGroup {
-    return CompanyFormComponent.makeForm(this.formBuilder);
   }
 }

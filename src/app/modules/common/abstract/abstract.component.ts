@@ -1,10 +1,11 @@
 import {OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormGroup} from '@angular/forms';
 import {HttpService} from './service/http.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NotifyMessageService} from '../notify-message/notify-message.service.ts.service';
 import {Location} from '@angular/common';
 import {Observable} from 'rxjs';
+import {FormService} from './form.service';
 
 export abstract class AbstractComponent implements OnInit {
   abstract successMessage: string;
@@ -15,11 +16,11 @@ export abstract class AbstractComponent implements OnInit {
 
   protected constructor(protected service: HttpService,
                         protected route: ActivatedRoute,
-                        protected formBuilder: FormBuilder,
+                        protected formService: FormService,
                         protected location: Location,
                         protected router: Router,
                         protected notifyMessage: NotifyMessageService) {
-    this.form = this.makeForm();
+    this.form = this.formService.make();
     this.slug = service.slug;
   }
 
@@ -31,7 +32,7 @@ export abstract class AbstractComponent implements OnInit {
   refresh() {
     this.service.show(this.id).subscribe(
       response => {
-        this.hydrateForm(response);
+        this.formService.hydrate(response, this.form);
       }, error => console.log(error)
     );
   }
@@ -39,7 +40,7 @@ export abstract class AbstractComponent implements OnInit {
   onSubmit() {
     this.getService()
       .subscribe((input) => {
-        this.resetForm();
+        this.formService.reset(this.form);
         this.notifyMessage.success(this.successMessage);
         try {
           this.router.navigate(['/' + this.slug + '/' + input.id]);
@@ -72,12 +73,6 @@ export abstract class AbstractComponent implements OnInit {
   showErrors() {
     return Object.keys(this.errors).length !== 0;
   }
-
-  abstract hydrateForm(response);
-
-  abstract makeForm();
-
-  abstract resetForm();
 
   abstract getService(): Observable<any>;
 }

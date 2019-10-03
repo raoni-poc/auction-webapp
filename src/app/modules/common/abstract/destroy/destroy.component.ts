@@ -5,7 +5,4 @@ export abstract class DestroyComponent extends AbstractComponent {
   getService(): Observable<any> {
     return this.service.destroy(this.id);
   }
-
-  resetForm() {
-  }
 }

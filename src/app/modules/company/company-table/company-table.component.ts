@@ -2,9 +2,9 @@ import {Component} from '@angular/core';
 import {CompanyHttpService} from '../company-http.service';
 import {CollectionComponent} from '../../common/abstract/collection/collection.component';
 import {ActivatedRoute, Router} from '@angular/router';
-import {FormBuilder} from '@angular/forms';
 import {Location} from '@angular/common';
 import {NotifyMessageService} from '../../common/notify-message/notify-message.service.ts.service';
+import {CompanyFormService} from '../company-form/company-form.service';
 
 @Component({
   selector: 'app-company-table',
@@ -16,10 +16,10 @@ export class CompanyTableComponent extends CollectionComponent {
 
   constructor(service: CompanyHttpService,
               route: ActivatedRoute,
-              formBuilder: FormBuilder,
+              formService: CompanyFormService,
               location: Location,
               router: Router,
               notifyMessage: NotifyMessageService) {
-    super(service, route, formBuilder, location, router, notifyMessage);
+    super(service, route, formService, location, router, notifyMessage);
   }
 }

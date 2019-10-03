@@ -1,7 +1,5 @@
 import {Component} from '@angular/core';
-import {FormBuilder, Validators} from '@angular/forms';
-import {FormComponent} from '../../common/abstract/form.component';
-import documentFieldOptions from '../document-fields-options';
+import {FormComponent} from '../../common/abstract/formComponent';
 
 @Component({
   selector: 'app-document-form',
@@ -9,27 +7,5 @@ import documentFieldOptions from '../document-fields-options';
   styleUrls: ['./document-form.component.css']
 })
 export class DocumentFormComponent extends FormComponent {
-
-  static makeForm(formBuild: FormBuilder) {
-    const o = documentFieldOptions;
-    return formBuild.group({
-      content: ['Empresa ' + (new Date().getTime()), [
-        Validators.required,
-      ]],
-      file: ['Nome Fantasia' + (new Date().getTime()), [
-        Validators.required,
-      ]],
-      expiration_date: ['Nome Fantasia' + (new Date().getTime()), [
-        Validators.required,
-      ]],
-      document_type: ['Nome Fantasia' + (new Date().getTime()), [
-        Validators.required,
-      ]],
-    });
-  }
-
-  get fieldOptions(): any {
-    return documentFieldOptions;
-  }
 
 }

@@ -4,7 +4,7 @@
     <thead>
     <tr>
       <td colspan="1">
-        <a class="btn btn-sm btn-primary" [routerLink]="'/'+this.slug+'/new'">
+        <a [routerLink]="'/'+this.slug+'/new'" class="btn btn-sm btn-primary">
           Criar
         </a>
       </td>
@@ -25,15 +25,15 @@
       <td>{{ model.created_at.date | date: 'dd/MM/yyyy'}}</td>
       <td>
         <div class="btn-group-sm">
-          <a class="btn btn-sm btn-success" [routerLink]="'/'+this.slug+'/'+model.id">Ver</a>
-          <a class="btn btn-sm btn-primary" [routerLink]="'/'+this.slug+'/edit/'+model.id">Editar</a>
-          <a class="btn btn-sm btn-danger" [routerLink]="'/'+this.slug+'/delete/'+model.id">Excluir</a>
+          <a [routerLink]="'/'+this.slug+'/'+model.id" class="btn btn-sm btn-success">Ver</a>
+          <a [routerLink]="'/'+this.slug+'/edit/'+model.id" class="btn btn-sm btn-primary">Editar</a>
+          <a [routerLink]="'/'+this.slug+'/delete/'+model.id" class="btn btn-sm btn-danger">Excluir</a>
         </div>
       </td>
     </tr>
     </tbody>
   </table>
   <pagination-controls (pageChange)="pageChanged($event)"
-                       previousLabel="Anterior"
-                       nextLabel="Próximo"></pagination-controls>
+                       nextLabel="Próximo"
+                       previousLabel="Anterior"></pagination-controls>
 </div>
