@@ -1,1 +1,8 @@
-<p>document-insert works!</p>
+<div class="container">
+  <h3>Dados do Documento</h3>
+  <app-card-error *ngIf="showErrors()">
+    <list-error [errors]="errors"></list-error>
+  </app-card-error>
+  <app-document-form [form]="form" [formService]="formService"></app-document-form>
+  <button class="btn btn-primary" (click)="onSubmit()" [disabled]="form.invalid">Salvar</button>
+</div>

@@ -1,1 +1,6 @@
-<p>requirement-show works!</p>
+<div class="container">
+  <h3>Requisito</h3>
+  <app-requirement-form [form]="form" [formService]="formService"></app-requirement-form>
+  <button class="btn btn-info" (click)="goToEdit()">Editar</button>
+  <button class="btn btn-danger fa-pull-right" (click)="goToDelete()">Remover</button>
+</div>

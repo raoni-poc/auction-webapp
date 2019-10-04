@@ -1,1 +1,9 @@
-<p>offer-insert works!</p>
+<div class="container">
+  <h3>Dados da Oferta</h3>
+  <app-card-error *ngIf="showErrors()">
+    <list-error [errors]="errors"></list-error>
+  </app-card-error>
+  <app-offer-form [form]="form" [formService]="formService"></app-offer-form>
+  <button class="btn btn-primary" (click)="onSubmit()" [disabled]="form.invalid">Salvar</button>
+</div>
+

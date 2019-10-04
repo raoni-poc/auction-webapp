@@ -1,1 +1,7 @@
-<p>offer-show works!</p>
+<div class="container">
+  <h3>Oferta</h3>
+  <app-offer-form [form]="form" [formService]="formService"></app-offer-form>
+  <button class="btn btn-info" (click)="goToEdit()">Editar</button>
+  <button class="btn btn-danger fa-pull-right" (click)="goToDelete()">Remover</button>
+</div>
+

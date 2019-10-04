@@ -1,1 +1,6 @@
-<p>bid-show works!</p>
+<div class="container">
+  <h3>Lance</h3>
+  <app-bid-form-form [form]="form" [formService]="formService"></app-bid-form-form>
+  <button class="btn btn-info" (click)="goToEdit()">Editar</button>
+  <button class="btn btn-danger fa-pull-right" (click)="goToDelete()">Remover</button>
+</div>

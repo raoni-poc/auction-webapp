@@ -3,6 +3,6 @@
   <app-card-error *ngIf="showErrors()">
     <list-error [errors]="errors"></list-error>
   </app-card-error>
-  <app-account-status-form [form]="form"></app-account-status-form>
+  <app-account-status-form [form]="form" [formService]="formService"></app-account-status-form>
   <button class="btn btn-primary" (click)="onSubmit()" [disabled]="form.invalid">Salvar</button>
 </div>

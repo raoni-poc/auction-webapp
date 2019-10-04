@@ -1,1 +1,9 @@
-<p>requirement-insert works!</p>
+<div class="container">
+  <h3>Tipo de Requisito</h3>
+  <app-card-error *ngIf="showErrors()">
+    <list-error [errors]="errors"></list-error>
+  </app-card-error>
+  <app-requirement-form [form]="form" [formService]="formService"></app-requirement-form>
+  <button class="btn btn-primary" (click)="onSubmit()" [disabled]="form.invalid">Salvar</button>
+</div>
+

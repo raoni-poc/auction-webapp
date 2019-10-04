@@ -5,6 +5,7 @@ import {NotifyMessageService} from '../../common/notify-message/notify-message.s
 import {CollectionComponent} from '../../common/abstract/collection/collection.component';
 import {BidHttpService} from '../bid-http.service';
 import {BidFormService} from '../bid-form/bid-form.service';
+
 @Component({
   selector: 'app-bid-table',
   templateUrl: './bid-table.component.html',

@@ -1,1 +1,8 @@
-<p>offer-type-edit works!</p>
+<div class="container">
+  <h3>Edição</h3>
+  <app-card-error *ngIf="showErrors()">
+    <list-error [errors]="errors"></list-error>
+  </app-card-error>
+  <app-offer-type-form [formService]="formService" [form]="form"></app-offer-type-form>
+  <button (click)="onSubmit()" [disabled]="form.invalid" class="btn btn-primary">Salvar</button>
+</div>

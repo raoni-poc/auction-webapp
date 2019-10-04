@@ -1,1 +1,6 @@
-<p>route-show works!</p>
+<div class="container">
+  <h3>Rota</h3>
+  <app-route-form [form]="form" [formService]="formService"></app-route-form>
+  <button class="btn btn-info" (click)="goToEdit()">Editar</button>
+  <button class="btn btn-danger fa-pull-right" (click)="goToDelete()">Remover</button>
+</div>

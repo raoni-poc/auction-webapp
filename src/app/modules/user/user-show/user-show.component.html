@@ -1,1 +1,6 @@
-<p>user-show works!</p>
+<div class="container">
+  <h3>Usuário</h3>
+  <app-user-form [form]="form" [formService]="formService"></app-user-form>
+  <button class="btn btn-info" (click)="goToEdit()">Editar</button>
+  <button class="btn btn-danger fa-pull-right" (click)="goToDelete()">Remover</button>
+</div>

@@ -1,1 +1,8 @@
-<p>city-edit works!</p>
+<div class="container">
+  <h3>Edição</h3>
+  <app-card-error *ngIf="showErrors()">
+    <list-error [errors]="errors"></list-error>
+  </app-card-error>
+  <app-city-form [form]="form" [formService]="formService"></app-city-form>
+  <button class="btn btn-primary" (click)="onSubmit()" [disabled]="form.invalid">Salvar</button>
+</div>

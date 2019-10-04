@@ -1,1 +1,6 @@
-<p>document-type-show works!</p>
+<div class="container">
+  <h3>Tipo de Documento</h3>
+  <app-document-type-form [form]="form" [formService]="formService"></app-document-type-form>
+  <button class="btn btn-info" (click)="goToEdit()">Editar</button>
+  <button class="btn btn-danger fa-pull-right" (click)="goToDelete()">Remover</button>
+</div>

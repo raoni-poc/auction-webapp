@@ -1,1 +1,6 @@
-<p>document-show works!</p>
+<div class="container">
+  <h3>Documento</h3>
+  <app-document-form [form]="form" [formService]="formService"></app-document-form>
+  <button class="btn btn-info" (click)="goToEdit()">Editar</button>
+  <button class="btn btn-danger fa-pull-right" (click)="goToDelete()">Remover</button>
+</div>
