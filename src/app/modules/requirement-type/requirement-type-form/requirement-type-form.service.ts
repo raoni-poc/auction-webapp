@@ -6,46 +6,37 @@ import {FormService} from '../../common/abstract/form.service';
 @Injectable({
   providedIn: 'root'
 })
-export class RequirimentFormService extends FormService {
+export class RequirementTypeFormService extends FormService {
   fieldOptions(): FieldsOptions {
     return {
       name: {
         id: 'name',
         label: 'Nome',
-        placeholder: 'Digite o Nome',
+        placeholder: 'Digite o tipo de requisito.',
         minlength: 3,
         maxlength: 255
-      },
-      requirement_type_id: {
-        id: 'name',
-        label: 'Tipo de Requirimento',
       },
     };
   }
 
   hydrate(model, form) {
-    form.get('name').setValue(model.name);
-    form.get('requirement_type_id').setValue(model.requirement_type_id);
+    form.get('name').value(model.name);
     return form;
   }
 
   make() {
     const o = this.fieldOptions();
     return this.formBuilder.group({
-      name: ['Requisito ' + (new Date().getTime()), [
+      name: ['Empresa ' + (new Date().getTime()), [
         Validators.required,
         Validators.minLength(o.name.minlength),
         Validators.maxLength(o.name.maxlength)
-      ]],
-      requirement_type_id: ['Requisito ' + (new Date().getTime()), [
-        Validators.required,
       ]]
     });
   }
 
   reset(form) {
-    form.get('name').setValue(null);
-    form.get('requirement_type_id').setValue(null);
+    form.get('name').value(null);
     return form;
   }
 }
