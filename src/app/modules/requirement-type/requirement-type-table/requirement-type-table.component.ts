@@ -12,7 +12,6 @@ import {RequirementTypeFormService} from '../requirement-type-form/requirement-t
   styleUrls: ['./requirement-type-table.component.css']
 })
 export class RequirementTypeTableComponent extends CollectionComponent {
-  successMessage = 'Tipo de requisito cadastrado com sucesso.';
   sortColumn = {column: 'created_at', sort: 'desc'};
 
   constructor(service: RequirementTypeHttpService,

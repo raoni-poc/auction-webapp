@@ -1,22 +1,22 @@
 import {Component} from '@angular/core';
-import {CompanyHttpService} from '../company-http.service';
+import {AddressHttpService} from '../address-http.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {AddressFormService} from '../address-form/address-form.service';
 import {Location} from '@angular/common';
 import {NotifyMessageService} from '../../common/notify-message/notify-message.service.ts.service';
 import {DestroyComponent} from '../../common/abstract/destroy/destroy.component';
-import {CompanyFormService} from '../company-form/company-form.service';
 
 @Component({
-  selector: 'app-company-delete',
-  templateUrl: './company-delete.component.html',
-  styleUrls: ['./company-delete.component.css']
+  selector: 'app-address-drestroy',
+  templateUrl: './address-destroy.component.html',
+  styleUrls: ['./address-destroy.component.css']
 })
-export class CompanyDeleteComponent extends DestroyComponent {
-  successMessage = 'Empresa removida com sucesso.';
+export class AddressDestroyComponent extends DestroyComponent {
+  successMessage = 'Endereço apagado com sucesso.';
 
-  constructor(service: CompanyHttpService,
+  constructor(service: AddressHttpService,
               route: ActivatedRoute,
-              formService: CompanyFormService,
+              formService: AddressFormService,
               location: Location,
               router: Router,
               notifyMessage: NotifyMessageService) {

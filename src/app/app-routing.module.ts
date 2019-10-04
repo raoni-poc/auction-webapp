@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {AppComponent} from './app.component';
 import {CompanyTableComponent} from './modules/company/company-table/company-table.component';
 import {CompanyInsertComponent} from './modules/company/company-insert/company-insert.component';

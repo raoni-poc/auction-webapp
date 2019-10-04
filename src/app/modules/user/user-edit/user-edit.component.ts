@@ -12,7 +12,7 @@ import {UserFormService} from '../user-form/user-form.service';
   styleUrls: ['./user-edit.component.css']
 })
 export class UserEditComponent extends EditComponent {
-  successMessage = 'Usuario editado com sucesso.';
+  successMessage = 'Usuário editado com sucesso.';
 
   constructor(service: UserHttpService,
               route: ActivatedRoute,
