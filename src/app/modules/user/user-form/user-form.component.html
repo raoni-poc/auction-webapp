@@ -4,7 +4,7 @@
     <input type="text"
            class="form-control"
            [id]="fieldOptions.name.id"
-           placeholder="Seu Nome"
+           [placeholder]="fieldOptions.name.placeholder"
            formControlName="name">
     <app-field-error [field]="form.get('name')"
                      [label]="fieldOptions.name.label"
@@ -15,7 +15,7 @@
     <input type="email"
            class="form-control"
            [id]="fieldOptions.email.id"
-           placeholder="Seu Email"
+           [placeholder]="fieldOptions.email.placeholder"
            formControlName="email">
     <app-field-error [field]="form.get('email')"
                      [label]="fieldOptions.email.label"
@@ -26,21 +26,21 @@
     <input type="password"
            class="form-control"
            [id]="fieldOptions.password.id"
-           placeholder="Seu Email"
+           [placeholder]="fieldOptions.password.placeholder"
            formControlName="password">
     <app-field-error [field]="form.get('password')"
                      [label]="fieldOptions.password.label"
                      [messages]="fieldOptions.password.validationMessage"></app-field-error>
   </div>
-  <div class="form-group">
-    <label [for]="fieldOptions.repassword.id">{{fieldOptions.repassword.label}}</label>
-    <input type="password"
-           class="form-control"
-           [id]="fieldOptions.repassword.id"
-           placeholder="Seu Email"
-           formControlName="repassword">
-    <app-field-error [field]="form.get('repassword')"
-                     [label]="fieldOptions.repassword.label"
-                     [messages]="fieldOptions.repassword.validationMessage"></app-field-error>
-  </div>
+<!--  <div class="form-group">-->
+<!--    <label [for]="fieldOptions.repassword.id">{{fieldOptions.repassword.label}}</label>-->
+<!--    <input type="password"-->
+<!--           class="form-control"-->
+<!--           [id]="fieldOptions.repassword.id"-->
+<!--           placeholder="Seu Email"-->
+<!--           formControlName="repassword">-->
+<!--    <app-field-error [field]="form.get('repassword')"-->
+<!--                     [label]="fieldOptions.repassword.label"-->
+<!--                     [messages]="fieldOptions.repassword.validationMessage"></app-field-error>-->
+<!--  </div>-->
 </div>

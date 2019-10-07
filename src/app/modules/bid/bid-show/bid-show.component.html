@@ -1,6 +1,8 @@
 <div class="container">
   <h3>Lance</h3>
-  <app-bid-form-form [form]="form" [formService]="formService"></app-bid-form-form>
-  <button class="btn btn-info" (click)="goToEdit()">Editar</button>
-  <button class="btn btn-danger fa-pull-right" (click)="goToDelete()">Remover</button>
+  <app-card-error *ngIf="showErrors()">
+    <list-error [errors]="errors"></list-error>
+  </app-card-error>
+  <app-bid-form [form]="form" [formService]="formService"></app-bid-form>
+  <button class="btn btn-primary" (click)="onSubmit()" [disabled]="form.invalid">Salvar</button>
 </div>

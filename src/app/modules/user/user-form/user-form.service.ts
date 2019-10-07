@@ -43,13 +43,14 @@ export class UserFormService extends FormService {
   make() {
     const o = this.fieldOptions();
     return this.formBuilder.group({
-      name: ['Empresa ' + (new Date().getTime()), [
+      name: ['Usuario ' + (new Date().getTime()), [
         Validators.required,
         Validators.minLength(o.name.minlength),
         Validators.maxLength(o.name.maxlength)
       ]],
-      email: ['Nome Fantasia' + (new Date().getTime()), [
+      email: ['email_teste_' + (new Date().getTime()) + '@com.br', [
         Validators.required,
+        Validators.email,
         Validators.minLength(o.email.minlength),
         Validators.maxLength(o.email.maxlength)
       ]],

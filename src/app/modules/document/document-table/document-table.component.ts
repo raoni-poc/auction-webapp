@@ -5,6 +5,7 @@ import {Location} from '@angular/common';
 import {NotifyMessageService} from '../../common/notify-message/notify-message.service.ts.service';
 import {CollectionComponent} from '../../common/abstract/collection/collection.component';
 import {DocumentFormService} from '../document-form/document-form.service';
+import {DocumentHttpService} from '../document-http.service';
 
 @Component({
   selector: 'app-document-table',
@@ -14,7 +15,7 @@ import {DocumentFormService} from '../document-form/document-form.service';
 export class DocumentTableComponent extends CollectionComponent {
   sortColumn = {column: 'created_at', sort: 'desc'};
 
-  constructor(service: CompanyHttpService,
+  constructor(service: DocumentHttpService,
               route: ActivatedRoute,
               formService: DocumentFormService,
               location: Location,

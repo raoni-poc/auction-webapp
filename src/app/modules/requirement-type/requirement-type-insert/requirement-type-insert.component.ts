@@ -5,6 +5,7 @@ import {RequirementTypeFormService} from '../requirement-type-form/requirement-t
 import {Location} from '@angular/common';
 import {NotifyMessageService} from '../../common/notify-message/notify-message.service.ts.service';
 import {InsertComponent} from '../../common/abstract/insert/insert.component';
+import {RequirementTypeHttpService} from '../requirement-type-http.service';
 
 @Component({
   selector: 'app-requirement-type-insert',
@@ -14,7 +15,7 @@ import {InsertComponent} from '../../common/abstract/insert/insert.component';
 export class RequirementTypeInsertComponent extends InsertComponent {
   successMessage = 'Tipo de requisito criado com sucesso.';
 
-  constructor(service: CompanyHttpService,
+  constructor(service: RequirementTypeHttpService,
               route: ActivatedRoute,
               formService: RequirementTypeFormService,
               location: Location,

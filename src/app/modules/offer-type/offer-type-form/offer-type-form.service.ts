@@ -27,7 +27,7 @@ export class OfferTypeFormService extends FormService {
   make() {
     const o = this.fieldOptions();
     return this.formBuilder.group({
-      name: ['Empresa ' + (new Date().getTime()), [
+      name: ['Tipo de Oferta ' + (new Date().getTime()), [
         Validators.required,
         Validators.minLength(o.name.minlength),
         Validators.maxLength(o.name.maxlength)

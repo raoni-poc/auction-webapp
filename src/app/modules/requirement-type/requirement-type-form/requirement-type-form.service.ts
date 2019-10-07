@@ -20,14 +20,14 @@ export class RequirementTypeFormService extends FormService {
   }
 
   hydrate(model, form) {
-    form.get('name').value(model.name);
+    form.get('name').setValue(model.name);
     return form;
   }
 
   make() {
     const o = this.fieldOptions();
     return this.formBuilder.group({
-      name: ['Empresa ' + (new Date().getTime()), [
+      name: ['Tipo de Requisito ' + (new Date().getTime()), [
         Validators.required,
         Validators.minLength(o.name.minlength),
         Validators.maxLength(o.name.maxlength)
@@ -36,7 +36,7 @@ export class RequirementTypeFormService extends FormService {
   }
 
   reset(form) {
-    form.get('name').value(null);
+    form.get('name').setValue(null);
     return form;
   }
 }

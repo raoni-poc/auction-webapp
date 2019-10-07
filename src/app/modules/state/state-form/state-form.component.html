@@ -16,9 +16,20 @@
            class="form-control"
            [id]="fieldOptions.abbreviation.id"
            placeholder="Digite o Nome do Estado"
-           formControlName="name">
+           formControlName="abbreviation">
     <app-field-error [field]="form.get('abbreviation')"
                      [label]="fieldOptions.abbreviation.label"
                      [messages]="fieldOptions.abbreviation.validationMessage"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.country_id.id">{{fieldOptions.country_id.label}}</label>
+    <input type="text"
+           class="form-control"
+           [id]="fieldOptions.country_id.id"
+           placeholder="Digite o Nome do Estado"
+           formControlName="country_id">
+    <app-field-error [field]="form.get('country_id')"
+                     [label]="fieldOptions.country_id.label"
+                     [messages]="fieldOptions.country_id.validationMessage"></app-field-error>
   </div>
 </div>

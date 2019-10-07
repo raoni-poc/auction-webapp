@@ -5,6 +5,7 @@ import {RequirementTypeFormService} from '../requirement-type-form/requirement-t
 import {Location} from '@angular/common';
 import {NotifyMessageService} from '../../common/notify-message/notify-message.service.ts.service';
 import {ShowComponent} from '../../common/abstract/show/show.component';
+import {RequirementTypeHttpService} from '../requirement-type-http.service';
 
 @Component({
   selector: 'app-requirement-type-show',
@@ -12,7 +13,7 @@ import {ShowComponent} from '../../common/abstract/show/show.component';
   styleUrls: ['./requirement-type-show.component.css']
 })
 export class RequirementTypeShowComponent extends ShowComponent {
-  constructor(service: CompanyHttpService,
+  constructor(service: RequirementTypeHttpService,
               route: ActivatedRoute,
               formService: RequirementTypeFormService,
               location: Location,

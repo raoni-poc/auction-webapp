@@ -14,18 +14,8 @@ export class DocumentFormService extends FormService {
         label: 'content',
         placeholder: 'Conteúdo',
       },
-      file: {
-        id: 'file',
-        label: 'file',
-        placeholder: 'Arquivo',
-      },
-      expiration_date: {
-        id: 'expiration_date',
-        label: 'expiration_date',
-        placeholder: 'Data de Validade',
-      },
-      document_type: {
-        id: 'document_type',
+      document_type_id: {
+        id: 'document_type_id',
         label: 'Tipo de Documento',
         placeholder: 'Tipo de Documento',
       }
@@ -34,25 +24,17 @@ export class DocumentFormService extends FormService {
 
   hydrate(model, form) {
     form.get('content').setValue(model.content);
-    form.get('file').setValue(model.file);
-    form.get('expiration_date').setValue(model.expiration_date);
-    form.get('document_type').setValue(model.document_type);
+    form.get('document_type_id').setValue(model.document_type_id);
     return form;
   }
 
   make() {
     const o = this.fieldOptions();
     return this.formBuilder.group({
-      content: ['Empresa ' + (new Date().getTime()), [
+      content: ['111.913.400-58', [
         Validators.required,
       ]],
-      file: ['Nome Fantasia' + (new Date().getTime()), [
-        Validators.required,
-      ]],
-      expiration_date: ['Nome Fantasia' + (new Date().getTime()), [
-        Validators.required,
-      ]],
-      document_type: ['Nome Fantasia' + (new Date().getTime()), [
+      document_type_id: ['Nome Fantasia' + (new Date().getTime()), [
         Validators.required,
       ]],
     });
@@ -60,9 +42,7 @@ export class DocumentFormService extends FormService {
 
   reset(form) {
     form.get('content').setValue(null);
-    form.get('file').setValue(null);
-    form.get('expiration_date').setValue(null);
-    form.get('document_type').setValue(null);
+    form.get('document_type_id').setValue(null);
     return form;
   }
 }

@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
-import {CompanyHttpService} from '../../company/company-http.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {NotifyMessageService} from '../../common/notify-message/notify-message.service.ts.service';
 import {CollectionComponent} from '../../common/abstract/collection/collection.component';
 import {CountryFormService} from '../country-form/country-form.service';
+import {CountryHttpService} from '../country-http.service';
 
 @Component({
   selector: 'app-country-table',
@@ -14,7 +14,7 @@ import {CountryFormService} from '../country-form/country-form.service';
 export class CountryTableComponent extends CollectionComponent {
   sortColumn = {column: 'created_at', sort: 'desc'};
 
-  constructor(service: CompanyHttpService,
+  constructor(service: CountryHttpService,
               route: ActivatedRoute,
               formService: CountryFormService,
               location: Location,

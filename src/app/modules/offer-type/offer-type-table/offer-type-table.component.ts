@@ -5,6 +5,7 @@ import {Location} from '@angular/common';
 import {NotifyMessageService} from '../../common/notify-message/notify-message.service.ts.service';
 import {CollectionComponent} from '../../common/abstract/collection/collection.component';
 import {CompanyFormService} from '../../company/company-form/company-form.service';
+import {OfferTypeHttpService} from '../offer-type-http.service';
 
 @Component({
   selector: 'app-offer-type-table',
@@ -14,7 +15,7 @@ import {CompanyFormService} from '../../company/company-form/company-form.servic
 export class OfferTypeTableComponent extends CollectionComponent {
   sortColumn = {column: 'created_at', sort: 'desc'};
 
-  constructor(service: CompanyHttpService,
+  constructor(service: OfferTypeHttpService,
               route: ActivatedRoute,
               formService: CompanyFormService,
               location: Location,

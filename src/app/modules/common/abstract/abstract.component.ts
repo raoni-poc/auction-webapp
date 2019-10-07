@@ -65,7 +65,7 @@ export abstract class AbstractComponent implements OnInit {
 
   goToDelete() {
     if (this.id) {
-      this.router.navigate(['/' + this.slug + '/delete/' + this.id]);
+      return this.router.navigate(['/' + this.slug + '/delete/' + this.id]);
     }
     console.log('Não há id');
   }

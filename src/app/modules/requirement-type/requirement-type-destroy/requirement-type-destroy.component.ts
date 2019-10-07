@@ -5,6 +5,7 @@ import {RequirementTypeFormService} from '../requirement-type-form/requirement-t
 import {Location} from '@angular/common';
 import {NotifyMessageService} from '../../common/notify-message/notify-message.service.ts.service';
 import {DestroyComponent} from '../../common/abstract/destroy/destroy.component';
+import {RequirementTypeHttpService} from '../requirement-type-http.service';
 
 @Component({
   selector: 'app-requirement-type-destroy',
@@ -14,7 +15,7 @@ import {DestroyComponent} from '../../common/abstract/destroy/destroy.component'
 export class RequirementTypeDestroyComponent extends DestroyComponent {
   successMessage = 'Tipo de requisito apagado com sucesso.';
 
-  constructor(service: CompanyHttpService,
+  constructor(service: RequirementTypeHttpService,
               route: ActivatedRoute,
               formService: RequirementTypeFormService,
               location: Location,

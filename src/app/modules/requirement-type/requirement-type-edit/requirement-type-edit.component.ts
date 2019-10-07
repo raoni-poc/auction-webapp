@@ -5,6 +5,7 @@ import {Location} from '@angular/common';
 import {NotifyMessageService} from '../../common/notify-message/notify-message.service.ts.service';
 import {EditComponent} from '../../common/abstract/edit/edit.component';
 import {RequirementTypeFormService} from '../requirement-type-form/requirement-type-form.service';
+import {RequirementTypeHttpService} from '../requirement-type-http.service';
 
 @Component({
   selector: 'app-requirement-type-edit',
@@ -14,7 +15,7 @@ import {RequirementTypeFormService} from '../requirement-type-form/requirement-t
 export class RequirementTypeEditComponent extends EditComponent {
   successMessage = 'Tipo de requisito editado com sucesso.';
 
-  constructor(service: CompanyHttpService,
+  constructor(service: RequirementTypeHttpService,
               route: ActivatedRoute,
               formService: RequirementTypeFormService,
               location: Location,

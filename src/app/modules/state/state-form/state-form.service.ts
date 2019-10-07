@@ -33,6 +33,7 @@ export class StateFormService extends FormService {
   hydrate(model, form) {
     form.get('name').setValue(model.name);
     form.get('abbreviation').setValue(model.abbreviation);
+    form.get('country_id').setValue(model.country_id);
     return form;
   }
 
@@ -48,7 +49,12 @@ export class StateFormService extends FormService {
         Validators.required,
         Validators.minLength(o.abbreviation.minlength),
         Validators.maxLength(o.abbreviation.maxlength)
-      ]]
+      ]],
+      country_id: [1, [
+        Validators.required,
+        Validators.minLength(o.abbreviation.minlength),
+        Validators.maxLength(o.abbreviation.maxlength)
+      ]],
     });
   }
 

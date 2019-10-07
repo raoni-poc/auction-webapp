@@ -112,6 +112,13 @@ import {StateInsertComponent} from './modules/state/state-insert/state-insert.co
 import {StateShowComponent} from './modules/state/state-show/state-show.component';
 import {StateTableComponent} from './modules/state/state-table/state-table.component';
 import {UserFormComponent} from './modules/user/user-form/user-form.component';
+import {AddressDestroyComponent} from './modules/address/address-drestroy/address-destroy.component';
+import {AddressEditComponent} from './modules/address/address-edit/address-edit.component';
+import {AddressFormComponent} from './modules/address/address-form/address-form.component';
+import {AddressInsertComponent} from './modules/address/address-insert/address-insert.component';
+import {AddressShowComponent} from './modules/address/address-show/address-show.component';
+import {AddressTableComponent} from './modules/address/address-table/address-table.component';
+import {BidTableComponent} from './modules/bid/bid-table/bid-table.component';
 
 @NgModule({
   declarations: [
@@ -127,9 +134,15 @@ import {UserFormComponent} from './modules/user/user-form/user-form.component';
     AccountStatusInsertComponent,
     AccountStatusShowComponent,
     AccountStatusTableComponent,
+    AddressDestroyComponent,
+    AddressEditComponent,
+    AddressFormComponent,
+    AddressInsertComponent,
+    AddressShowComponent,
+    AddressTableComponent,
     BidEditComponent,
     BidFormComponent,
-    BidEditComponent,
+    BidTableComponent,
     BidShowComponent,
     BidDestroyComponent,
     BidInsertComponent,

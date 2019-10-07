@@ -37,7 +37,7 @@ export class RequirementFormService extends FormService {
         Validators.minLength(o.name.minlength),
         Validators.maxLength(o.name.maxlength)
       ]],
-      requirement_type_id: ['Requisito ' + (new Date().getTime()), [
+      requirement_type_id: [null, [
         Validators.required,
       ]]
     });
