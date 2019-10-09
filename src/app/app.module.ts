@@ -119,6 +119,8 @@ import {AddressInsertComponent} from './modules/address/address-insert/address-i
 import {AddressShowComponent} from './modules/address/address-show/address-show.component';
 import {AddressTableComponent} from './modules/address/address-table/address-table.component';
 import {BidTableComponent} from './modules/bid/bid-table/bid-table.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NgSelectModule} from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -246,6 +248,8 @@ import {BidTableComponent} from './modules/bid/bid-table/bid-table.component';
     NgxPaginationModule,
     ReactiveFormsModule,
     Select2Module,
+    BrowserAnimationsModule,
+    NgSelectModule,
   ],
   exports: [AppComponent, CardErrorComponent, FieldErrorComponent],
   entryComponents: [AppComponent],

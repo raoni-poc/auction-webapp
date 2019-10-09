@@ -1,35 +1,51 @@
 <div [formGroup]="form">
   <div class="form-group">
     <label [for]="fieldOptions.ibge_code.id">{{fieldOptions.ibge_code.label}}</label>
-    <input type="text"
-           class="form-control"
-           [id]="fieldOptions.ibge_code.id"
+    <input [id]="fieldOptions.ibge_code.id"
            [placeholder]="fieldOptions.ibge_code.placeholder"
-           formControlName="ibge_code">
+           class="form-control"
+           formControlName="ibge_code"
+           type="text">
     <app-field-error [field]="form.get('ibge_code')"
                      [label]="fieldOptions.ibge_code.label"
                      [messages]="fieldOptions.ibge_code.validationMessage"></app-field-error>
   </div>
   <div class="form-group">
     <label [for]="fieldOptions.name.id">{{fieldOptions.name.label}}</label>
-    <input type="text"
-           class="form-control"
-           [id]="fieldOptions.name.id"
+    <input [id]="fieldOptions.name.id"
            [placeholder]="fieldOptions.name.placeholder"
-           formControlName="name">
+           class="form-control"
+           formControlName="name"
+           type="text">
     <app-field-error [field]="form.get('name')"
                      [label]="fieldOptions.name.label"
                      [messages]="fieldOptions.name.validationMessage"></app-field-error>
   </div>
   <div class="form-group">
     <label [for]="fieldOptions.state_id.id">{{fieldOptions.state_id.label}}</label>
-    <input type="number"
-           class="form-control"
-           [id]="fieldOptions.state_id.id"
-           formControlName="state_id">
+<!--    <input [id]="fieldOptions.state_id.id"-->
+<!--           class="form-control"-->
+<!--           formControlName="state_id"-->
+<!--           type="number">-->
+
+    <ng-select (search)="onSearch($event)"
+               appendTo="body"
+               [id]="fieldOptions.state_id.id"
+               bindLabel="name"
+               multiple="true"
+               formControlName="state_id"
+               placeholder="Select item">
+      <ng-option *ngFor="let item of items" [disabled]="item.disabled" [value]="item.id">
+        <!--        <img height="20px" src="./assets/{{item.image}}" width="20px"/>-->
+        {{item.name}}
+      </ng-option>
+    </ng-select>
+
+
     <app-field-error [field]="form.get('state_id')"
                      [label]="fieldOptions.state_id.label"
                      [messages]="fieldOptions.state_id.validationMessage"></app-field-error>
   </div>
+
 </div>
 

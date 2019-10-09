@@ -29,8 +29,8 @@ export class FieldErrorComponent {
   }
 
   getMessage(error) {
-    console.log(error);
-    console.log(this.messages);
+    // console.log(error);
+    // console.log(this.messages);
     const replaceTokens = [this.label];
     if (this.messages && this.messages.hasOwnProperty(error)) {
       if (Array.isArray(this.messages[error])) {

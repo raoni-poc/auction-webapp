@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {AppComponent} from './app.component';
 import {CompanyTableComponent} from './modules/company/company-table/company-table.component';
 import {CompanyInsertComponent} from './modules/company/company-insert/company-insert.component';
 import {CompanyShowComponent} from './modules/company/company-show/company-show.component';
@@ -95,7 +94,8 @@ import {CountryDestroyComponent} from './modules/country/country-destroy/country
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
+    redirectTo: '/offer',
+    pathMatch: 'full'
   },
   // *******************************
   {
