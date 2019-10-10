@@ -13,8 +13,8 @@ export class CityFormService extends FormService {
         id: 'ibge_code',
         label: 'Código Ibge',
         placeholder: 'Digite o código Ibge da cidade.',
-        minlength: 3,
-        maxlength: 255
+        min: 1,
+        max: 999999999
       },
       name: {
         id: 'name',
@@ -43,8 +43,8 @@ export class CityFormService extends FormService {
     return this.formBuilder.group({
       ibge_code: [(new Date().getTime()), [
         Validators.required,
-        Validators.minLength(o.ibge_code.minlength),
-        Validators.maxLength(o.ibge_code.maxlength)
+        Validators.min(o.ibge_code.min),
+        Validators.max(o.ibge_code.max)
       ]],
       name: ['Cidade ' + (new Date().getTime()), [
         Validators.required,

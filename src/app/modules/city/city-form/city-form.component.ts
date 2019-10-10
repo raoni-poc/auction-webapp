@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, EventEmitter, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {FormComponent} from '../../common/abstract/formComponent';
 import {StateHttpService} from '../../state/state-http.service';
 import {debounceTime, distinctUntilChanged, filter, map} from 'rxjs/operators';
@@ -14,7 +14,7 @@ export class CityFormComponent extends FormComponent implements OnInit {
   ];
   searchInput = new Subject<string>();
   constructor(protected changeRef: ChangeDetectorRef,
-              private stateService: StateHttpService) {
+              private stateHttpService: StateHttpService) {
     super(changeRef);
   }
 
@@ -28,29 +28,42 @@ export class CityFormComponent extends FormComponent implements OnInit {
         return event.term;
       }),
       filter((res: string) => res.length > 1),
-      debounceTime(500),
+      debounceTime(300),
       distinctUntilChanged())
       .subscribe((term: string) => {
-        this.suggestState(term);
+        this.suggestOptions(term);
       });
   }
 
-  private suggestState(termSearch) {
-    this.stateService.collection({
+  changeSelect(event) {
+    const formControl = this.form.get('state_id');
+    if (!isNaN(event) && formControl.pristine) {
+      this.replaceStateIdByStateName(event);
+    }
+  }
+
+  private suggestOptions(termSearch) {
+    this.stateHttpService.collection({
       page: 1,
       search: termSearch
     }).subscribe((result) => {
-      this.syncStatesInSelect(result.data);
+      this.syncOptionsInSelect(result.data);
     });
   }
 
-  private syncStatesInSelect(states) {
+  private replaceStateIdByStateName(id) {
+    this.stateHttpService.show(id).subscribe((result) => {
+      this.syncOptionsInSelect([result]);
+    });
+  }
+
+  private syncOptionsInSelect(states) {
     const selectItems = [];
     if (states.length > 0) {
       states.forEach(state => {
         selectItems.push({
           id: state.id,
-          name: state.name + '/' + state.abbreviation
+          name: state.name + ' / ' + state.abbreviation
         });
       });
     }

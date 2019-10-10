@@ -22,9 +22,6 @@ export abstract class ShowComponent extends AbstractComponent {
   onSubmit() {
   }
 
-  resetForm() {
-  }
-
   getService(): Observable<any> {
     return this.service.show(this.id);
   }

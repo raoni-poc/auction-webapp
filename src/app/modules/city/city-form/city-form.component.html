@@ -23,24 +23,19 @@
   </div>
   <div class="form-group">
     <label [for]="fieldOptions.state_id.id">{{fieldOptions.state_id.label}}</label>
-<!--    <input [id]="fieldOptions.state_id.id"-->
-<!--           class="form-control"-->
-<!--           formControlName="state_id"-->
-<!--           type="number">-->
 
     <ng-select (search)="onSearch($event)"
+               (ngModelChange)="changeSelect($event)"
                appendTo="body"
                [id]="fieldOptions.state_id.id"
                bindLabel="name"
-               multiple="true"
+               [multiple]="false"
                formControlName="state_id"
                placeholder="Select item">
       <ng-option *ngFor="let item of items" [disabled]="item.disabled" [value]="item.id">
-        <!--        <img height="20px" src="./assets/{{item.image}}" width="20px"/>-->
         {{item.name}}
       </ng-option>
     </ng-select>
-
 
     <app-field-error [field]="form.get('state_id')"
                      [label]="fieldOptions.state_id.label"
