@@ -48,7 +48,7 @@ export class AddressFormService extends FormService {
   }
 
   hydrate(model, form) {
-    form.get('city_id').setValue(model.city_id);
+    form.get('city_id').setValue(model.city.id);
     form.get('number').setValue(model.number);
     form.get('zip_code').setValue(model.zip_code);
     form.get('neighborhood').setValue(model.neighborhood);

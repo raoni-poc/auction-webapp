@@ -10,12 +10,14 @@ import {Subject} from 'rxjs';
   styleUrls: ['./city-form.component.css']
 })
 export class CityFormComponent extends FormComponent implements OnInit {
-  items = [
-  ];
+  items = [];
   searchInput = new Subject<string>();
+  protected selectFormControlName: string;
+
   constructor(protected changeRef: ChangeDetectorRef,
-              private stateHttpService: StateHttpService) {
+              private selectService: StateHttpService) {
     super(changeRef);
+    this.selectFormControlName = 'state_id';
   }
 
   onSearch(search) {
@@ -36,14 +38,14 @@ export class CityFormComponent extends FormComponent implements OnInit {
   }
 
   changeSelect(event) {
-    const formControl = this.form.get('state_id');
+    const formControl = this.form.get(this.selectFormControlName);
     if (!isNaN(event) && formControl.pristine) {
-      this.replaceStateIdByStateName(event);
+      this.replaceIdByName(event);
     }
   }
 
   private suggestOptions(termSearch) {
-    this.stateHttpService.collection({
+    this.selectService.collection({
       page: 1,
       search: termSearch
     }).subscribe((result) => {
@@ -51,19 +53,19 @@ export class CityFormComponent extends FormComponent implements OnInit {
     });
   }
 
-  private replaceStateIdByStateName(id) {
-    this.stateHttpService.show(id).subscribe((result) => {
+  private replaceIdByName(id) {
+    this.selectService.show(id).subscribe((result) => {
       this.syncOptionsInSelect([result]);
     });
   }
 
-  private syncOptionsInSelect(states) {
+  private syncOptionsInSelect(options) {
     const selectItems = [];
-    if (states.length > 0) {
-      states.forEach(state => {
+    if (options.length > 0) {
+      options.forEach(option => {
         selectItems.push({
-          id: state.id,
-          name: state.name + ' / ' + state.abbreviation
+          id: option.id,
+          name: option.name + ' / ' + option.abbreviation
         });
       });
     }

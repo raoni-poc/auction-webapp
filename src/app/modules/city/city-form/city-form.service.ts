@@ -34,7 +34,7 @@ export class CityFormService extends FormService {
   hydrate(model, form) {
     form.get('ibge_code').setValue(model.ibge_code);
     form.get('name').setValue(model.name);
-    form.get('state_id').setValue(model.state_id);
+    form.get('state_id').setValue(model.state.id);
     return form;
   }
 

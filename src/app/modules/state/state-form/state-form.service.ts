@@ -33,7 +33,7 @@ export class StateFormService extends FormService {
   hydrate(model, form) {
     form.get('name').setValue(model.name);
     form.get('abbreviation').setValue(model.abbreviation);
-    form.get('country_id').setValue(model.country_id);
+    form.get('country_id').setValue(model.country.id);
     return form;
   }
 
